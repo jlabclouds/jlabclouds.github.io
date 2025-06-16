@@ -1,7 +1,7 @@
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
 - Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims due to 
 Nvidia GPUs needed for Isaac Sim and Isaac Lab
-- Also running a svr img and installing a <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">desktop flavor</a> - which can also be cycled through!
+- Also running an Ubuntu svr img and installing a <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">desktop flavor</a> - which can also be cycled through!
 - Ubuntu already includes Py and Pip
 
 ---
@@ -50,7 +50,7 @@ newgrp docker
 
 # Nvidia Isaac Sim Workstation (Standalone)
 ```bash
-https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip"
+<"https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">
 mkdir ~/isaacsim
 cd ~/Downloads
 unzip "isaac-sim-standalone@4.5.0-rc.36+release.19112.f59b3005.gl.linux-x86_64.release.zip" -d ~/isaacsim

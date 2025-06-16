@@ -1,5 +1,4 @@
 # jlabclouds.github.io
-##  Q# Setup
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
 - Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo
 - Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href=https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops"</a>
@@ -7,6 +6,8 @@
 
 ---
 ## After creating or running an Ubuntu VM 
+            add code to check os hardware for architecture
+            to be up and running within minutes
 ```bash
 locale  # check for UTF-8
 sudo apt update && sudo apt install locales
@@ -35,7 +36,34 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-
 sudo apt-get update
 sudo apt-get install gz-ionic
 
-https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+# Docker installation using the convenience script
+# Ask user if want to install docker/podman or both
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Post-install steps for Docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Nvidia Isaac Sim
+# https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip
+mkdir ~/isaacsim
+cd ~/Downloads
+unzip "isaac-sim-standalone@4.5.0-rc.36+release.19112.f59b3005.gl.linux-x86_64.release.zip" -d ~/isaacsim
+cd ~/isaacsim
+./post_install.sh
+./isaac-sim.selector.sh
+
+# Nvidia Isaac Lab
+
 ```
 
-
+https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
+# Output/Print following response to user
+# Under VS Code extensions tab search for QDK and install from Microsoft provider
+```
+---
+# Connect a controller 
+# Lidar Sonar Radar
+# Optics with AI integration and object detection

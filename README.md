@@ -98,7 +98,6 @@ https://github.com/cyberbotics/webots/releases/download/R2025a/webots_2025a_amd6
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
 ```
 ---
-## Output/Print following response to user
 ## Under VS Code extensions tab search for QDK and install from Microsoft provider
 ## Connect a controller 
 ## Lidar Sonar Radar

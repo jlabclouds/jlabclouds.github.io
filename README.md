@@ -3,7 +3,6 @@
 Nvidia GPUs needed for Isaac Sim and Isaac Lab
 - Also running a svr img and installing a <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">desktop flavor</a> - which can also be cycled through!
 - Ubuntu already includes Py and Pip
-
 ---
 ## After creating or running an Ubuntu VM 
 ```bash
@@ -89,7 +88,8 @@ docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e
     nvcr.io/nvidia/isaac-sim:4.5.0
 
 # Nvidia Isaac Lab
-- Requires Nvidia GPU driver
+- Requires Nvidia GPU driver or Cloud Deployment method utilizing
+Nvidia RTX GPUs
 
 #Install VS Code
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 

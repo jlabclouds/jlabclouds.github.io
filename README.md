@@ -2,7 +2,7 @@
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
 - Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims due to 
 Nvidia GPUs needed for Isaac Sim and Isaac Lab
-- Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href=https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops"</a>
+- Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops</a>
 - Ubuntu already includes Py and Pip
 
 ---
@@ -44,15 +44,50 @@ sudo sh get-docker.sh
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
+```
+# Nvidia Isaac Sim Workstation (Standalone)
+<a href="https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">Isaac SIM</a>
 
-# Nvidia Isaac Sim
-# https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip
+```bash
 mkdir ~/isaacsim
 cd ~/Downloads
 unzip "isaac-sim-standalone@4.5.0-rc.36+release.19112.f59b3005.gl.linux-x86_64.release.zip" -d ~/isaacsim
 cd ~/isaacsim
 ./post_install.sh
 ./isaac-sim.selector.sh
+
+# Nvidia Isaac Sim Container deployment
+Configure the repository
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+    && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
+    && \
+    sudo apt-get update
+# Install the NVIDIA Container Toolkit packages
+sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+# Configure the container runtime
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+# Verify NVIDIA Container Toolkit
+docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+# Confirm Nvidia GPU version
+nvidia-smi
+# Pull
+docker pull nvcr.io/nvidia/isaac-sim:4.5.0
+# Run
+docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
+    -e "PRIVACY_CONSENT=Y" \
+    -v ~/docker/isaac-sim/cache/kit:/isaac-sim/kit/cache:rw \
+    -v ~/docker/isaac-sim/cache/ov:/root/.cache/ov:rw \
+    -v ~/docker/isaac-sim/cache/pip:/root/.cache/pip:rw \
+    -v ~/docker/isaac-sim/cache/glcache:/root/.cache/nvidia/GLCache:rw \
+    -v ~/docker/isaac-sim/cache/computecache:/root/.nv/ComputeCache:rw \
+    -v ~/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw \
+    -v ~/docker/isaac-sim/data:/root/.local/share/ov/data:rw \
+    -v ~/docker/isaac-sim/documents:/root/Documents:rw \
+    nvcr.io/nvidia/isaac-sim:4.5.0
 
 # Nvidia Isaac Lab
 

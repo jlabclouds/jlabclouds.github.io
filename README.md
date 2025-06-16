@@ -49,9 +49,8 @@ newgrp docker
 ---
 
 # Nvidia Isaac Sim Workstation (Standalone)
-<a href="https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">Isaac SIM</a>
-
 ```bash
+https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip"
 mkdir ~/isaacsim
 cd ~/Downloads
 unzip "isaac-sim-standalone@4.5.0-rc.36+release.19112.f59b3005.gl.linux-x86_64.release.zip" -d ~/isaacsim

@@ -1,7 +1,7 @@
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
 - Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims due to 
 Nvidia GPUs needed for Isaac Sim and Isaac Lab
-- Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops</a>
+- Also running a svr img and installing a <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">desktop flavor</a> - which can also be cycled through!
 - Ubuntu already includes Py and Pip
 
 ---
@@ -89,14 +89,14 @@ docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e
     nvcr.io/nvidia/isaac-sim:4.5.0
 
 # Nvidia Isaac Lab
+- Requires Nvidia GPU driver
 
-```
-
+#Install VS Code
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
-# Output/Print following response to user
-# Under VS Code extensions tab search for QDK and install from Microsoft provider
 ```
 ---
+# Output/Print following response to user
+# Under VS Code extensions tab search for QDK and install from Microsoft provider
 # Connect a controller 
 # Lidar Sonar Radar
 # Optics with AI integration and object detection

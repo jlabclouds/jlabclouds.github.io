@@ -1,6 +1,7 @@
 # jlabclouds.github.io
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
-- Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims
+- Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims due to 
+Nvidia GPUs needed for Isaac Sim and Isaac Lab
 - Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href=https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops"</a>
 - Ubuntu already includes Py and Pip
 

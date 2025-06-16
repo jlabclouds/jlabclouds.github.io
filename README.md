@@ -95,8 +95,8 @@ docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
 ```
 ---
-# Output/Print following response to user
-# Under VS Code extensions tab search for QDK and install from Microsoft provider
-# Connect a controller 
-# Lidar Sonar Radar
-# Optics with AI integration and object detection
+## Output/Print following response to user
+## Under VS Code extensions tab search for QDK and install from Microsoft provider
+## Connect a controller 
+## Lidar Sonar Radar
+## Optics with AI integration and object detection

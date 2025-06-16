@@ -1,13 +1,11 @@
 # jlabclouds.github.io
 - If running win 10 or 11 and have issues such as installing languages or pkgs, quickest workaround would be running a VM snapshot with Ubuntu (**deb or apt pkg mgr distro**)
-- Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo
+- Ubuntu Noble (24.04 LTS) is the ONLY officially supported distro that will run Ros2 and Gazebo, 86-64 arch is most straightforward path for sims
 - Also running a svr img and installing a desktop flavor - which can also be cycled through! <a href=https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">Ubuntu Desktops"</a>
 - Ubuntu already includes Py and Pip
 
 ---
 ## After creating or running an Ubuntu VM 
-            add code to check os hardware for architecture
-            to be up and running within minutes
 ```bash
 locale  # check for UTF-8
 sudo apt update && sudo apt install locales

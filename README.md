@@ -3,8 +3,10 @@
 Nvidia GPUs needed for Isaac Sim and Isaac Lab
 - Also running a svr img and installing a <a href="https://ubuntu.com/desktop/flavors" target="_blank" rel="noopener noreferrer">desktop flavor</a> - which can also be cycled through!
 - Ubuntu already includes Py and Pip
+
 ---
-## After creating or running an Ubuntu VM 
+
+# After creating or running an Ubuntu VM 
 ```bash
 locale  # check for UTF-8
 sudo apt update && sudo apt install locales
@@ -43,6 +45,9 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 ```
+
+---
+
 # Nvidia Isaac Sim Workstation (Standalone)
 <a href="https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">Isaac SIM</a>
 
@@ -57,11 +62,11 @@ cd ~/isaacsim
 # Nvidia Isaac Sim Container deployment
 Configure the repository
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-    && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
-    && \
-    sudo apt-get update
+&& curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
+&& \
+sudo apt-get update
 # Install the NVIDIA Container Toolkit packages
 sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
@@ -97,7 +102,7 @@ https://github.com/cyberbotics/webots/releases/download/R2025a/webots_2025a_amd6
 #Install VS Code
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
 ```
----
+---up
 ## Under VS Code extensions tab search for QDK and install from Microsoft provider
 ## Connect a controller 
 ## Lidar Sonar Radar

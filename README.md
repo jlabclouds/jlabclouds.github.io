@@ -91,6 +91,9 @@ docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e
 - Requires Nvidia GPU driver or Cloud Deployment method utilizing
 Nvidia RTX GPUs
 
+# Install Webots 
+https://github.com/cyberbotics/webots/releases/download/R2025a/webots_2025a_amd64.deb
+
 #Install VS Code
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
 ```

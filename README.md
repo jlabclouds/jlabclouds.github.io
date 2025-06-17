@@ -48,7 +48,7 @@ newgrp docker
 
 ---
 
-# Nvidia Isaac Sim Workstation (Standalone)
+# Nvidia Isaac Sim Workstation
 ```bash
 <"https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">
 mkdir ~/isaacsim
@@ -101,8 +101,10 @@ https://github.com/cyberbotics/webots/releases/download/R2025a/webots_2025a_amd6
 #Install VS Code
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 
 ```
----up
+---
+
 ## Under VS Code extensions tab search for QDK and install from Microsoft provider
-## Connect a controller 
+- <a href="Spot.c" target="_blank" rel="noopener noreferrer">Spot</a>
 ## Lidar Sonar Radar
 ## Optics with AI integration and object detection
+## Connect a controller 

@@ -104,8 +104,8 @@ https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 ---
 
 * Under VS Code extensions tab search for QDK and install from Microsoft provider
-- <a href="Spot.c" target="_blank" rel="noopener noreferrer">Spot</a>
 * Create an admin portal first that can be used for subsequent projects
+* <a href="Spot.c" target="_blank" rel="noopener noreferrer">Spot</a>
 * Lidar Sonar Radar
 * Location of sensory units should be noted 
 * Hardware placement will then be bolt-on once chassis is built

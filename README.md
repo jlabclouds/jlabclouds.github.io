@@ -111,3 +111,7 @@ https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 * Hardware placement will then be bolt-on once chassis is built
 * Optics with AI integration and object detection
 * Connect a controller 
+
+
+
+

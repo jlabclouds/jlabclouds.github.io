@@ -205,37 +205,148 @@ $ ./setpass.sh
 ## Task 1: Reset Root Password
 ---
 - Break into node2 and set a new root password to hoppy
+- At kernel version bootloader press 'E'
+- At end of linux ($root) add swap rd.break and press Ctrl-x or F10
+```bash
+mount -o remount,rw /sysroot
+chroot /sysroot
+passwd
+# Enter new password
+touch /.autorelabel
+exit
+```
 
 ## Task 2: Tuning Profile Configuration and SELINUX
 ---
 - Check the current recommended tuning profile
+```bash
+systemctl status tuned
+sudo dnf install duned -y
+sudo systemctl enable --now tuned
+systemctl status tuned
+tuned-adm recommend
+sudo tuned-adm profile virtual-guest
+tuded-adm active
+```
 - Put SELinux in permissive mode on node2
+```bash
+getenforce
+sudo setenforce 0
+sudo vim /etc/selinux/config
+# Set SELINUX=permissive
+getenforce
+sudo reboot
+```
 - On node1 ensure network service is enabled and starts on boot
-
+```bash
+systemctl status NetworkManager
+sudo systemctl enable --now NetworkManager
+systemctl status NetworkManager
+```
 ## Task 4: Persistant Journaling
 ---
 - Configure persistant journaling on both servers to retain logs and reboots
+```bash
+su
+cat /var/log/messages
+mkdir /var/log/journal
+ls /var/log/journal/
+journalctl --flush
+ls /var/log/journal/
+```
 
 ## Task 5: Process process scheduling
 ---
 - Start a stress-ng process on node1 with a niceness value of 19
-- Adjust the niceness value of the running stress-ng process to 
+- Adjust the niceness value of the running stress-ng process to 10
 - Terminate the stress-ng process
+```bash
+top
+dnf list installed | grep stress-ng
+dnf install stress-ng -y
+dnf list installed | grep stress-ng
+nice -n 19 stress-ng -c 1 &
+top
+# 'r' to adjust niceness value of stress-ng pid
+# 'k'to terminate pid process
+9
+q
+```bash
 
 ## Task 6: File Permissions & File ACLs
 ---
 - Copy /etc/fstab to /var/tmp
 - Set the file owner to root
+chown root: /var/tmp/fstab
+chmod -x /var/tmp/fstab
 - Ensure /var/tmp/fstab is not executable by anyone
 - Configure file ACLs on the copied file to"
     - User adam: read & write
     - User maryam: no access
     - All other users: read-only
-
+```bash
+getfacl /var/tmp/fstab
+ls -al /var/tmp/fstab
+setfacl -m u:adam:rw- /var/tmp/fstab
+setfacl -m u:maryam:--- /var/tmp/fstab
+setfacl -m o::r-- /var/tmp/fstab
+getfacl /var/tmp/fstab
+```
 ## Task 7: Secure File Transfer
 - On node1, create a file node1-file.ext and securely copy (scp) to home dir of user on node2
+```bash
+touch node1-file.txt
+# get IP of node2 using ifconfig
+scp -v node1-file.txt user@IP:home/usr/
+```
 
 # Section4: How to Configure Local Linux Storage
+- Task 1: Set Up LVM on node1
+    * Create a logical volume named devops_lv with 32 extents using the /dev/vdb disk
+        * This should be created from a volume group named devops_vg with 20mb physical extents. Format the logical volume as an ext4 filesystem and mount it persistently at /mnt/devops_lv
+```bash
+lsblk
+echo $(( 32 * 20 ))
+fdisk /dev/vdb
+m
+p
+lsblk
+pvcreate dev/vdb1
+man pvcreate
+vgcreate -s 20M devops_vg /dev/vb1
+vgdisplay devops_vg
+lvcreate -n devops_lv -l 32 devops_vg
+lvs
+mkfs.ext4 /dev/devops_vg/devops_lv
+mkdir /mnt/devops_lv
+vim /etc/fstab
+# Shift + $
+/dev/devops_vg/devops_lv /mnt/devops_lv 
+ext4
+defaults
+0 0 
+mount -a
+df -h
+```
+- Task 2: Create and Mount Swap volume persistently
+    * From /dev/vdb, create a 800mb swap partition and configure it to mount persistently. All changes must persist after reboot
+```bash
+lsblk
+fdisk /dev/vdb
+m
+p
+free -h
+mkswap /dev/vdb2
+cat /etc/fstab
+lsblk
+vim /etc/fstab
+/dev/vdb2 swap swap defaults 00
+mount -a
+swapon -a
+swapon /dev/vdb2
+free -h
+lsblk
+```
 # Section5: Create and Configure File Systems
 - Task 1: Resize devlops_lv and Configure Swap volume
     * On node1, resize the existing cloud_lv logical volume to 250MB (a size between 225-270MB is acceptable), while resizing its filesystem accordingly.

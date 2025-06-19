@@ -237,7 +237,59 @@ $ ./setpass.sh
 
 # Section4: How to Configure Local Linux Storage
 # Section5: Create and Configure File Systems
+- Task 1: Resize devlops_lv and Configure Swap volume
+    * On node1, resize the existing cloud_lv logical volume to 250MB (a size between 225-270MB is acceptable), while resizing its filesystem accordingly.
+
+- Task 2: Configure Autofs for remote user home directories
+    * Create a user named bobby with UID of 4000, with no home directory, and a base directory of /mnt/netdir and a password of hoppy
+```bash
+lvs
+man lvextend
+lvextend -L +50 /dev/cloud_vg/cloud_lv -r
+lvs
+```
+    * Configure NFS autofs such that the home directory of user bob is automatically mounted at /mnt/netdir/bobby on login. Note that bobby's account has been configured on the NFS server exporting their home directory at repo.rhcsa.home:/home/bobb Login as bobby to verify your config
+```bash
+useradd -u 4000 -M -b /mnt/netdir bobby
+id bobby
+passwd bobby
+# note directions "hoppy"
+systemctl status autofs
+sudo dnf install autofs nfs-utils
+systemctl status aufofs
+systemctl enable --now autofs
+systemctl status autofs
+ping repo.rhcsa.home
+mkdir /mnt/netdir
+cd /etc/auto.master.d/
+ls
+vim rhcsa.home
+-rw repo.rhcsa.home:/home/&
+ls
+cat rhcsa.home
+vim /etc/auto.master
++auto.master
+/mnt/netdir /etc/auto.master.d/rhcsa.home
+systemctl restart autofs
+systemctl status
+# Verify
+su - bobby 
+```
 # Section6: Deploy, Configure and Maintain Linux
+- Task 1: Cron Job Configuration
+    * Create a cron job for user that runs logger "RHCSA Playlist Now Available" every 2 minutes. Use at to write "This task was easy!" to /at-files/at.txt in 2 minutes.
+
+- Task 2: Local YUM Repository Configuration
+    * Configure BaseOS (URL: http://repo.rhcsa.home/repo/BaseOS/) and AppStream (URL: http://repo.rhcsa.home/repo/AppStream/) repos on node1
+
+- Task 3: NTP Chrony Configuration
+    * Set up chrony time service to sync time with server.rhel.com
+
+- Task 4: GRUB Bootloader Modification
+    * Set GRUB_TIMEOUT=10,
+    * GRUB_TIMEOUT_STYLE=hidden, and add quiet to GRUB_CMDLINE_LINUX.
+    * Apply your changes to the grub config file.
+
 # Section7: How to Configure Networking on Linux
 # Section8: How to Manage Users and Groups 
 # Section9: Manage Linux Security

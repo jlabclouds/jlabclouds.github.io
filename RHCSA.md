@@ -388,9 +388,31 @@ su - bobby
 # Section6: Deploy, Configure and Maintain Linux
 - Task 1: Cron Job Configuration
     * Create a cron job for user that runs logger "RHCSA Playlist Now Available" every 2 minutes. Use at to write "This task was easy!" to /at-files/at.txt in 2 minutes.
+```bash
+systemctl --now enable crond
+cat /etc/crontab
+crontab -e -u $user
+*/2**** logger "RHCSA Playlist Now Available"
+journalctl -f | grep RHCSA
+grep RHCSA /var/log/messages
+systemctl status at.d
+dnf install at -y
+systemctl enable --bow at.d
+systemctl status at.d
+mkdir /at-files
+echo "This task was easy!" >> /at-files/at.txt | at now + 2 minutes
+man at
+atq
+ls /at-files/
+cd /at-files/
+cat at.txt
+```
 
 - Task 2: Local YUM Repository Configuration
     * Configure BaseOS (URL: http://repo.rhcsa.home/repo/BaseOS/) and AppStream (URL: http://repo.rhcsa.home/repo/AppStream/) repos on node1
+```bash
+
+```
 
 - Task 3: NTP Chrony Configuration
     * Set up chrony time service to sync time with server.rhel.com
@@ -404,3 +426,12 @@ su - bobby
 # Section8: How to Manage Users and Groups 
 # Section9: Manage Linux Security
 # Section10: Manage Containers
+
+
+IF it was real, how can i get my shit together for the possibility of it happening again? 
+Communication = on point!
+Heart = Amazing
+Fuckin picked me up at 4 am wth!
+Analyze, why did I enjoy walking around target with her so much
+She literally turned into the most amazing person on earth
+If I want her around so bad then i have to do something

@@ -1,4 +1,4 @@
-- Credit to <a href="https://www.youtube.com/@harunaadoga" target="_blank" rel="noopener noreferrer">Haruna Adoga</a>
+I'm- Credit to <a href="https://www.youtube.com/@harunaadoga" target="_blank" rel="noopener noreferrer">Haruna Adoga</a>
 # Section1: Understand & Use Essential Linux Tools
 ## Task 1: Text search and Archive - man pages
 - 1.1 Find the string "listen" in /etc/httpd/conf/httpd.conf and save the output to /root/web.Text
@@ -427,10 +427,3 @@ cat at.txt
 # Section9: Manage Linux Security
 # Section10: Manage Containers
 
-
-IF it was real, how can i get my shit together for the possibility of it happening again? 
-Communication = on point!
-Heart = Amazing
-Fuckin picked me up at 4 am wth!
-Analyze - why did I enjoy walking around target with her so much she literally turned into the most beautiful person on earth!
-If I want her around so bad then i have to do something

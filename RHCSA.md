@@ -432,6 +432,5 @@ IF it was real, how can i get my shit together for the possibility of it happeni
 Communication = on point!
 Heart = Amazing
 Fuckin picked me up at 4 am wth!
-Analyze, why did I enjoy walking around target with her so much
-She literally turned into the most amazing person on earth
+Analyze - why did I enjoy walking around target with her so much she literally turned into the most beautiful person on earth!
 If I want her around so bad then i have to do something

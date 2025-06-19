@@ -350,15 +350,14 @@ lsblk
 # Section5: Create and Configure File Systems
 - Task 1: Resize devlops_lv and Configure Swap volume
     * On node1, resize the existing cloud_lv logical volume to 250MB (a size between 225-270MB is acceptable), while resizing its filesystem accordingly.
-
-- Task 2: Configure Autofs for remote user home directories
-    * Create a user named bobby with UID of 4000, with no home directory, and a base directory of /mnt/netdir and a password of hoppy
 ```bash
 lvs
 man lvextend
 lvextend -L +50 /dev/cloud_vg/cloud_lv -r
 lvs
 ```
+- Task 2: Configure Autofs for remote user home directories
+    * Create a user named bobby with UID of 4000, with no home directory, and a base directory of /mnt/netdir and a password of hoppy
     * Configure NFS autofs such that the home directory of user bob is automatically mounted at /mnt/netdir/bobby on login. Note that bobby's account has been configured on the NFS server exporting their home directory at repo.rhcsa.home:/home/bobb Login as bobby to verify your config
 ```bash
 useradd -u 4000 -M -b /mnt/netdir bobby

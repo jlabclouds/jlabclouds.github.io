@@ -1,4 +1,4 @@
-I'm- Credit to <a href="https://www.youtube.com/@harunaadoga" target="_blank" rel="noopener noreferrer">Haruna Adoga</a>
+- Credit to <a href="https://www.youtube.com/@harunaadoga" target="_blank" rel="noopener noreferrer">Haruna Adoga</a>
 # Section1: Understand & Use Essential Linux Tools
 ## Task 1: Text search and Archive - man pages
 - 1.1 Find the string "listen" in /etc/httpd/conf/httpd.conf and save the output to /root/web.Text
@@ -411,19 +411,162 @@ cat at.txt
 - Task 2: Local YUM Repository Configuration
     * Configure BaseOS (URL: http://repo.rhcsa.home/repo/BaseOS/) and AppStream (URL: http://repo.rhcsa.home/repo/AppStream/) repos on node1
 ```bash
+dnf install git -y
+cd /etc/yum.repos.d/
+ls
+vim rchsa.repo
+[BaseOS]
+name-BaseOS RHCSA
+baseurl=http://repo.rhcsa.home/repo/BaseOS/
+enabled=1
+gpgcheck=0
 
+[AppStream]
+name=AppStream RHCSA
+baseurl=http://repo.rhcsa.home/repo/AppStream
+enabled=1
+gpgcheck=0
+dnf repolist
+#Check work
+pwd
+ls
+cat rhcsa.repo
 ```
 
 - Task 3: NTP Chrony Configuration
     * Set up chrony time service to sync time with server.rhel.com
+```bash
+systemctl status chronyd
+systemctl enable --now chronyd
+vim /etc/chrony.conf
+# RHCSA server
+pool server.rhel.com iburst
+systemctl restart chronyd
+chronyc sources
+```
 
 - Task 4: GRUB Bootloader Modification
     * Set GRUB_TIMEOUT=10,
     * GRUB_TIMEOUT_STYLE=hidden, and add quiet to GRUB_CMDLINE_LINUX.
     * Apply your changes to the grub config file.
-
+```bash
+vim /etc/default/grub
+GRUB_TIMEOUT_STYLE=hidden
+# add quiet to end of cmd line
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 # Section7: How to Configure Networking on Linux
-# Section8: How to Manage Users and Groups 
-# Section9: Manage Linux Security
-# Section10: Manage Containers
+- Task 1: Enable Network Services
+    * Ensure network services starts at boot
+```bash
+systemctl enable --now NetworkManager
+systemctl status NetworkManager
+```
 
+- Task 2: Firewall Rules
+    * Allow access SSH and HTTP services using firewall-cmd
+```bash
+firewall-cmd --list-all
+firewall-cmd --add-service rpc-bind --permanent
+firewall-cmd --reload
+firewall-cmd --list-all
+```
+- Task 3: Static IP Configuration
+    * Assign IP 172.16.1.10/24, gateway 172.16.1.1, DNS 172.16.1.1
+    * hostname node5.rhcsa
+    * Set DNS search domain to rhel.server.com
+```bash
+ifconfig
+nmcli
+nmcli con show
+nmtui
+# edit connection
+# IPV4 config
+# edit address config
+# edit hostname
+# Activate a connection, deactivate
+nmtui # reactivate
+ifconfig
+```
+
+# Section8: How to Manage Users and Groups 
+- Task 1: User/Group Creation
+    * Create a group named sharegroup and the following users
+        * $User (with no login shell, not a member of sharegroup)
+        * Umar (member of sharegrp)
+        * Adoga (with UUID 4444 member of sharegrp)
+        * All users should have a passwd persward
+        * Change the passwd of user $User to perfect
+```bash
+groupadd sharegroup
+getent group sharegroup
+useradd -s /sbin/nologin haruna
+id haruna
+useradd -G sharegroup umar
+id umar
+useradd -a 4444 -G sharegroup adoga
+id adoga
+for user in haruna umar adoga; do echo 'persward' | passwd --stdin $user; done
+passwd adoga
+```
+
+- Task 2: User Password Policies
+    * Enforce password policy to have a minimum length of 8 chars
+    * Set the max password age to 30 days
+```bash
+vim /etc/security/pwquality.conf
+vim /etc/login.defs
+```
+
+- Task 3: Delete Users and Groups
+    * Remove the user Umar from sharegrp
+    * Delete the sharegrp
+    * Delete the user $User with their home directory
+```bash
+man gpasswd
+gpasswd -d umar sharegroup
+getent group sharegroup
+groupdel sharegroup
+getent group sharegroup
+ls /home/
+man userdel
+userdel -r haruna
+```
+
+# Section9: Manage Linux Security
+- Task 1: Configure Key-based Authentication as root & Allow SSH Root Access
+    * Generate SSH key on nod1, and setup key-based authentication for the root user
+    * Enable SSH root login and test your configuration
+```bash
+ssh-keygen
+cd .ssh
+ls
+vim /etc/ssh/sshd_config
+systemctl restart sshd
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@ip
+ssh root@ip
+```
+
+- Task 2: HTTPD Server Troubleshooting SELinux
+    * The web server on node1 (192.168.70.10) is listening on port 85, ensure that the website is reachable via that port
+    * Fix SELinux context for /var/wwwhtml, if needed
+    * Tet using curl http://server-ip/ or use a web browser
+```bash
+systemctl start httpd
+vim /etc/dttpd/conf/httpd.conf
+semanage port -l | grep http
+man semanage port
+semanage port -a -t http_port_t -p tcp 85
+semange port -l | grep http
+firewall-cmd --list-all
+firewall-cmd --add-port 45/tcp --permanent
+firewall-cmd --add-service http --permanent
+firewall-cmd reload
+firewall-cmd --list-all
+systemctl restart httpd
+systemctl enable --now httpd
+systemctl status httpd
+curl http://server-ip/
+```
+
+# Section10: Manage Containers

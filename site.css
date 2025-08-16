@@ -1,0 +1,43 @@
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+        }
+        .navbar { background-color: var(--primary-color); }
+        .nav-link, .navbar-brand { color: white !important; }
+        .tech-card {
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .category-header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tech-icon {
+            width: 32px;
+            height: 32px;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        .tech-icon:hover {
+            transform: scale(1.1);
+        }
+        .search-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 300px;
+        }
+        .search-bar input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }

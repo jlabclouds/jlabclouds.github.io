@@ -1,80 +1,183 @@
-# ReactFullStackTS# React ASP.NET Core TypeScript with Linux Container Support
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React ASP.NET Core TypeScript with Linux Container Support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7f9fb;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px 32px;
+        }
+        h1, h2, h3 {
+            color: #2d3a4a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #e3e7ed;
+            padding-bottom: 0.2em;
+        }
+        h3 {
+            font-size: 1.15em;
+            color: #3a4a5d;
+        }
+        ul {
+            margin: 1em 0 1em 1.5em;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        code, pre {
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            background: #f4f6fa;
+            color: #2d3a4a;
+            border-radius: 5px;
+        }
+        pre {
+            padding: 1em;
+            overflow-x: auto;
+            margin: 1em 0;
+            border-left: 4px solid #4f8cff;
+            background: #f4f6fa;
+        }
+        a {
+            color: #4f8cff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .project-structure {
+            background: #f9fafc;
+            border: 1px solid #e3e7ed;
+            border-radius: 6px;
+            padding: 1em 1.5em;
+            margin: 1em 0;
+        }
+        .license {
+            font-size: 0.95em;
+            color: #6a7a8c;
+            margin-top: 2em;
+            border-top: 1px solid #e3e7ed;
+            padding-top: 1em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 6px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React ASP.NET Core TypeScript with Linux Container Support</h1>
+        <p>
+            This project is a starter framework that combines <strong>React</strong> (frontend), <strong>ASP.NET Core</strong> (backend), and <strong>TypeScript</strong> for building modern web applications. It is pre-configured to run seamlessly in Linux containers, making it ideal for cloud-native deployments and development workflows.
+        </p>
 
-This project is a starter framework that combines **React** (frontend), **ASP.NET Core** (backend), and **TypeScript** for building modern web applications. It is pre-configured to run seamlessly in Linux containers, making it ideal for cloud-native deployments and development workflows.
+        <h2>Best Use Cases</h2>
+        <ul>
+            <li><strong>Full-stack web applications:</strong> Build robust solutions that require a powerful backend (ASP.NET Core) and a dynamic, responsive frontend (React). Perfect for dashboards, portals, and interactive web platforms.</li>
+            <li><strong>Microservices and APIs:</strong> Easily containerize your backend services for deployment on Kubernetes, Docker Swarm, or other orchestrators. The project structure supports scalable, maintainable API development.</li>
+            <li><strong>Cross-platform development:</strong> Develop and test in Linux-based containers to ensure consistency between local, staging, and production environments. This approach minimizes "works on my machine" issues and streamlines CI/CD pipelines.</li>
+            <li><strong>Enterprise-grade applications:</strong> Leverage TypeScript for enhanced type safety, maintainability, and developer productivity. The stack is well-suited for large teams and long-term projects where code quality and reliability are critical.</li>
+            <li><strong>Cloud-native deployments:</strong> Take advantage of seamless integration with cloud platforms and container registries, enabling rapid deployment and scaling in cloud environments such as Azure, AWS, or Google Cloud.</li>
+            <li><strong>Rapid prototyping:</strong> Quickly scaffold new projects with a ready-to-use setup, reducing initial configuration time and allowing teams to focus on feature development.</li>
+        </ul>
+        <p>
+            Whether you're building a new SaaS product, internal business tools, or public-facing web services, this template provides a solid foundation for modern, scalable, and maintainable applications.
+        </p>
 
-## Best Use Cases
+        <h3>Example Use Cases and Related Technologies</h3>
+        <ul>
+            <li><strong>SaaS Products:</strong> Quickly launch subscription-based platforms such as CRM systems (e.g., similar to HubSpot or Salesforce), project management tools (like Asana or Trello), or analytics dashboards. The stack supports multi-tenancy, secure authentication (integrate with Azure AD, Auth0, or Okta), and scalable APIs.</li>
+            <li><strong>Internal Business Tools:</strong> Develop custom admin panels, inventory management systems, HR portals, or workflow automation tools. Integrate with databases like PostgreSQL, SQL Server, or MongoDB, and connect to enterprise services (e.g., Microsoft Graph, SAP, or ServiceNow).</li>
+            <li><strong>Public-Facing Web Services:</strong> Build customer portals, e-commerce storefronts (similar to Shopify or WooCommerce), or booking systems. Easily add payment processing (Stripe, PayPal), email notifications (SendGrid, Mailgun), and third-party APIs (Google Maps, Twilio).</li>
+            <li><strong>Microservices Architectures:</strong> Containerize backend services for deployment on Kubernetes (AKS, EKS, GKE), Docker Swarm, or Azure Container Apps. Use API gateways (e.g., Azure API Management, Kong) and service meshes (Istio, Linkerd) for advanced routing and security.</li>
+            <li><strong>Cloud-Native Integrations:</strong> Seamlessly deploy to cloud platforms like Azure App Service, AWS Elastic Beanstalk, or Google Cloud Run. Automate CI/CD with GitHub Actions, Azure DevOps, or GitLab CI, and manage secrets with Azure Key Vault or AWS Secrets Manager.</li>
+            <li><strong>Rapid Prototyping:</strong> Scaffold MVPs for startups, hackathons, or client demos. Leverage component libraries (Material-UI, Ant Design), state management (Redux, Zustand), and testing frameworks (Jest, xUnit) to accelerate development.</li>
+        </ul>
+        <p>
+            This template is designed to be extensible and production-ready, enabling integration with modern DevOps workflows, monitoring tools (Application Insights, Prometheus, Grafana), and observability platforms (Datadog, New Relic) for end-to-end visibility and reliability.
+        </p>
 
-This starter framework is ideal for a variety of modern development scenarios, including:
+        <h2>Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li><a href="https://dotnet.microsoft.com/download" target="_blank">.NET 7 SDK or later</a></li>
+            <li><a href="https://nodejs.org/" target="_blank">Node.js (LTS)</a></li>
+            <li><a href="https://www.docker.com/get-started" target="_blank">Docker</a> (for container support)</li>
+        </ul>
 
-- **Full-stack web applications:** Build robust solutions that require a powerful backend (ASP.NET Core) and a dynamic, responsive frontend (React). Perfect for dashboards, portals, and interactive web platforms.
-- **Microservices and APIs:** Easily containerize your backend services for deployment on Kubernetes, Docker Swarm, or other orchestrators. The project structure supports scalable, maintainable API development.
-- **Cross-platform development:** Develop and test in Linux-based containers to ensure consistency between local, staging, and production environments. This approach minimizes "works on my machine" issues and streamlines CI/CD pipelines.
-- **Enterprise-grade applications:** Leverage TypeScript for enhanced type safety, maintainability, and developer productivity. The stack is well-suited for large teams and long-term projects where code quality and reliability are critical.
-- **Cloud-native deployments:** Take advantage of seamless integration with cloud platforms and container registries, enabling rapid deployment and scaling in cloud environments such as Azure, AWS, or Google Cloud.
-- **Rapid prototyping:** Quickly scaffold new projects with a ready-to-use setup, reducing initial configuration time and allowing teams to focus on feature development.
+        <h3>Running Locally</h3>
+        <ol>
+            <li>
+                <strong>Clone the repository:</strong>
+                <pre><code>git clone &lt;repository-url&gt;
+cd React-ASP-TS-CS</code></pre>
+            </li>
+            <li>
+                <strong>Install frontend dependencies:</strong>
+                <pre><code>cd ClientApp
+npm install
+cd ..</code></pre>
+            </li>
+            <li>
+                <strong>Run the application:</strong>
+                <pre><code>dotnet run</code></pre>
+                <p>The backend will start, and the React frontend will be served via ASP.NET Core.</p>
+            </li>
+        </ol>
 
-Whether you're building a new SaaS product, internal business tools, or public-facing web services, this template provides a solid foundation for modern, scalable, and maintainable applications.
+        <h3>Running in a Linux Container</h3>
+        <ol>
+            <li>
+                <strong>Build the Docker image:</strong>
+                <pre><code>docker build -t react-asp-ts-cs .</code></pre>
+            </li>
+            <li>
+                <strong>Run the container:</strong>
+                <pre><code>docker run -p 5000:80 react-asp-ts-cs</code></pre>
+                <p>The app will be available at <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>.</p>
+            </li>
+        </ol>
 
-### Example Use Cases and Related Technologies
+        <h2>Project Structure</h2>
+        <div class="project-structure">
+            <ul>
+                <li><code>ClientApp/</code> — React + TypeScript frontend</li>
+                <li><code>Controllers/</code> — ASP.NET Core API controllers</li>
+                <li><code>Dockerfile</code> — Container configuration</li>
+                <li><code>Startup.cs</code> / <code>Program.cs</code> — ASP.NET Core setup</li>
+            </ul>
+        </div>
 
-- **SaaS Products:** Quickly launch subscription-based platforms such as CRM systems (e.g., similar to HubSpot or Salesforce), project management tools (like Asana or Trello), or analytics dashboards. The stack supports multi-tenancy, secure authentication (integrate with Azure AD, Auth0, or Okta), and scalable APIs.
-- **Internal Business Tools:** Develop custom admin panels, inventory management systems, HR portals, or workflow automation tools. Integrate with databases like PostgreSQL, SQL Server, or MongoDB, and connect to enterprise services (e.g., Microsoft Graph, SAP, or ServiceNow).
-- **Public-Facing Web Services:** Build customer portals, e-commerce storefronts (similar to Shopify or WooCommerce), or booking systems. Easily add payment processing (Stripe, PayPal), email notifications (SendGrid, Mailgun), and third-party APIs (Google Maps, Twilio).
-- **Microservices Architectures:** Containerize backend services for deployment on Kubernetes (AKS, EKS, GKE), Docker Swarm, or Azure Container Apps. Use API gateways (e.g., Azure API Management, Kong) and service meshes (Istio, Linkerd) for advanced routing and security.
-- **Cloud-Native Integrations:** Seamlessly deploy to cloud platforms like Azure App Service, AWS Elastic Beanstalk, or Google Cloud Run. Automate CI/CD with GitHub Actions, Azure DevOps, or GitLab CI, and manage secrets with Azure Key Vault or AWS Secrets Manager.
-- **Rapid Prototyping:** Scaffold MVPs for startups, hackathons, or client demos. Leverage component libraries (Material-UI, Ant Design), state management (Redux, Zustand), and testing frameworks (Jest, xUnit) to accelerate development.
-
-This template is designed to be extensible and production-ready, enabling integration with modern DevOps workflows, monitoring tools (Application Insights, Prometheus, Grafana), and observability platforms (Datadog, New Relic) for end-to-end visibility and reliability.
-
-## Getting Started
-
-### Prerequisites
-
-- [.NET 7 SDK or later](https://dotnet.microsoft.com/download)
-- [Node.js (LTS)](https://nodejs.org/)
-- [Docker](https://www.docker.com/get-started) (for container support)
-
-### Running Locally
-
-1. **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd React-ASP-TS-CS
-    ```
-
-2. **Install frontend dependencies:**
-    ```bash
-    cd ClientApp
-    npm install
-    cd ..
-    ```
-
-3. **Run the application:**
-    ```bash
-    dotnet run
-    ```
-    The backend will start, and the React frontend will be served via ASP.NET Core.
-
-### Running in a Linux Container
-
-1. **Build the Docker image:**
-    ```bash
-    docker build -t react-asp-ts-cs .
-    ```
-
-2. **Run the container:**
-    ```bash
-    docker run -p 5000:80 react-asp-ts-cs
-    ```
-    The app will be available at [http://localhost:5000](http://localhost:5000).
-
-## Project Structure
-
-- `ClientApp/` — React + TypeScript frontend
-- `Controllers/` — ASP.NET Core API controllers
-- `Dockerfile` — Container configuration
-- `Startup.cs` / `Program.cs` — ASP.NET Core setup
-
-## License
-
-This project is licensed under the MIT License.
+        <div class="license">
+            <strong>License:</strong> This project is licensed under the MIT License.
+        </div>
+    </div>
+</body>
+</html>

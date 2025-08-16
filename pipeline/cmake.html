@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to CMake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; color: #222; }
+        h1, h2 { color: #2d5fa4; }
+        code, pre { background: #eee; padding: 2px 6px; border-radius: 4px; }
+        pre { padding: 1em; }
+        ul { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Getting Started with CMake</h1>
+    <p>
+        <strong>CMake</strong> is a cross-platform build system generator. It helps manage the build process of software projects, especially those written in C, C++, and Fortran.
+    </p>
+
+    <h2>Why Choose CMake?</h2>
+    <ul>
+        <li><strong>Portability:</strong> Generates native build files for many platforms (Unix Makefiles, Visual Studio, Ninja, etc.).</li>
+        <li><strong>Scalability:</strong> Handles small to very large projects with complex dependencies.</li>
+        <li><strong>Integration:</strong> Widely supported by IDEs and CI/CD tools.</li>
+        <li><strong>Modern Features:</strong> Supports modern C++ standards, testing, packaging, and more.</li>
+    </ul>
+
+    <h2>When to Use CMake</h2>
+    <ul>
+        <li>When your project needs to be built on multiple platforms.</li>
+        <li>When you want to manage dependencies and external libraries easily.</li>
+        <li>When you need to automate complex build processes.</li>
+        <li>When you want to integrate with modern development tools and workflows.</li>
+    </ul>
+
+    <h2>Benefits of CMake</h2>
+    <ul>
+        <li>Reduces manual configuration and errors.</li>
+        <li>Improves reproducibility and maintainability of builds.</li>
+        <li>Supports out-of-source builds, keeping source directories clean.</li>
+        <li>Facilitates testing and packaging.</li>
+    </ul>
+
+    <h2>How to Create a CMake Application</h2>
+    <ol>
+        <li>
+            <strong>Create a <code>CMakeLists.txt</code> file:</strong>
+            <pre>
+cmake_minimum_required(VERSION 3.10)
+project(MyApp)
+
+add_executable(MyApp main.cpp)
+            </pre>
+        </li>
+        <li>
+            <strong>Generate build files:</strong>
+            <pre>cmake -S . -B build</pre>
+        </li>
+        <li>
+            <strong>Build the application:</strong>
+            <pre>cmake --build build</pre>
+        </li>
+        <li>
+            <strong>Run your application:</strong>
+            <pre>./build/MyApp</pre>
+        </li>
+    </ol>
+
+    <h2>Summary</h2>
+    <p>
+        CMake is a powerful tool for managing builds in modern software projects. It is especially useful when portability, scalability, and integration are important. By learning CMake, you can streamline your development workflow and ensure your projects are easy to build and maintain.
+    </p>
+</body>
+</html>

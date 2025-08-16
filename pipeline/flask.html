@@ -1,126 +1,177 @@
-# Flask
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskJinjaPy - Flask Project Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS for professional styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 40px 32px;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        pre, code {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 1em;
+        }
+        .feature-list li {
+            margin-bottom: 0.5em;
+        }
+        .project-structure {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1em;
+        }
+        .section-title {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+        .license {
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+        .code-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-4">FlaskJinjaPy <small class="text-muted fs-5">Flask Project Overview</small></h1>
+    <p class="lead">FlaskJinjaPy is a Python project that demonstrates how to build web applications using <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a> and <a href="https://jinja.palletsprojects.com/" target="_blank">Jinja2</a>.</p>
 
-Flask is a Python project that demonstrates how to build web applications using [Flask](https://flask.palletsprojects.com/) and [Jinja2](https://jinja.palletsprojects.com/).
+    <h2 class="section-title">Best Use Cases</h2>
+    <ul class="feature-list">
+        <li><strong>Learning Flask and Jinja2:</strong> Straightforward, well-documented codebase for beginners to grasp web development fundamentals in Python.</li>
+        <li><strong>Prototyping Web Applications:</strong> Minimal setup lets you quickly spin up working web apps for testing ideas or proof-of-concept projects.</li>
+        <li><strong>Small to Medium Projects:</strong> Modular structure suitable for personal projects, internal tools, or MVPs, allowing easy growth.</li>
+        <li><strong>Template Customization:</strong> Jinja2 enables reusable components, custom filters, and clean separation of logic and presentation.</li>
+        <li><strong>Educational and Teaching Tool:</strong> Practical resource for instructors and students in workshops, tutorials, or classrooms.</li>
+    </ul>
+    <p>This project provides a solid foundation for building web applications that require dynamic content, user interaction, and maintainable code.</p>
 
-## Best Use Cases
+    <h2 class="section-title">Example Use Cases &amp; Related Technologies</h2>
+    <ul class="feature-list">
+        <li><strong>Personal Portfolio Website:</strong> Dynamic portfolio with routes for projects and blog posts, rendered from Python data or a database.</li>
+        <li><strong>Internal Dashboards:</strong> Team dashboards for analytics or server status, integrating APIs and interactive charts (e.g., Chart.js).</li>
+        <li><strong>Event Registration Forms:</strong> Registration pages with form handling and feedback using Flask and Jinja2.</li>
+        <li><strong>API Prototyping:</strong> Quickly prototype RESTful APIs and test behaviors before full-scale development.</li>
+        <li><strong>Educational Demos:</strong> Demonstrate authentication, template inheritance, or form validation in a classroom setting.</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Flask Extensions</h5>
+            <ul>
+                <li>Flask-WTF: Form creation &amp; validation</li>
+                <li>Flask-Login: User authentication</li>
+                <li>Flask-SQLAlchemy: SQL database integration</li>
+            </ul>
+            <h5>Front-End Libraries</h5>
+            <ul>
+                <li>Bootstrap, Tailwind CSS: Styling &amp; responsiveness</li>
+                <li>Alpine.js, Vanilla JS: Interactivity</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5>Testing Tools</h5>
+            <ul>
+                <li>pytest, unittest: Automated route &amp; logic testing</li>
+            </ul>
+            <h5>Deployment Platforms</h5>
+            <ul>
+                <li>Heroku, PythonAnywhere, Docker: Cloud/container deployment</li>
+            </ul>
+            <h5>Database Backends</h5>
+            <ul>
+                <li>SQLite: Lightweight, file-based</li>
+                <li>PostgreSQL, MySQL: Production-ready, scalable</li>
+            </ul>
+        </div>
+    </div>
 
-Flask is ideal for:
+    <h2 class="section-title">Features</h2>
+    <ul class="feature-list">
+        <li>Lightweight Flask web server</li>
+        <li>Jinja2 templating for dynamic HTML</li>
+        <li>Easy to extend and customize</li>
+    </ul>
 
-- **Learning Flask and Jinja2:** FlaskJinjaPy offers a straightforward and well-documented codebase, making it perfect for beginners who want to grasp the fundamentals of web development in Python. The project demonstrates how routing, request handling, and template rendering work together, providing a clear learning path for new developers.
+    <h2 class="section-title">Getting Started</h2>
+    <p>
+        <a href="https://github.com/authlib/example-oauth2-server/tree/master" target="_blank">Reference: Authlib OAuth2 Example</a>
+    </p>
+    <ol>
+        <li>
+            <strong>Clone the repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/FlaskJinjaPy.git
+cd FlaskJinjaPy</code></pre>
+        </li>
+        <li>
+            <strong>Install dependencies:</strong>
+            <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+            <strong>Set Flask and Authlib environment variables</strong>
+            <pre><code># DO NOT SET THIS IN PRODUCTION!
+export AUTHLIB_INSECURE_TRANSPORT=1</code></pre>
+        </li>
+        <li>
+            <strong>Create Database and Run the application:</strong>
+            <pre><code>python app.py
+flask app __init__.py</code></pre>
+        </li>
+        <li>
+            <strong>Open your browser:</strong>
+            <br>
+            Visit <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>
+        </li>
+        <li>
+            <strong>Passwd flow example</strong>
+            <ul>
+                <li>Get client_id and client_secret</li>
+            </ul>
+            <pre><code>curl -u ${client_id}:${client_secret} -XPOST http://127.0.0.1:5000/oauth/token -F grant_type=password -F username=${username} -F password=valid -F scope=profile</code></pre>
+            <ul>
+                <li>Note password=valid</li>
+            </ul>
+            <pre><code>curl -H "Authorization: Bearer ${access_token}" http://127.0.0.1:5000/api/me</code></pre>
+            <ul>
+                <li>Grant Auth, send code to Auth server to get access token</li>
+            </ul>
+            <pre><code>curl -u ${client_id}:${client_secret} -XPOST http://127.0.0.1:5000/oauth/token -F grant_type=authorization_code -F scope=profile -F code=${code}</code></pre>
+            <pre><code>curl -H "Authorization: Bearer ${access_token}" http://127.0.0.1:5000/api/me</code></pre>
+        </li>
+        <li>
+            <strong>Auth flow example</strong>
+            <ul>
+                <li>Test the auth code flow</li>
+            </ul>
+            <pre><code>open http://127.0.0.1:5000/oauth/authorize?response_type=code&amp;client_id=${client_id}&amp;scope=profile</code></pre>
+        </li>
+    </ol>
 
-- **Prototyping Web Applications:** With minimal setup and boilerplate, you can quickly spin up a working web application. This makes FlaskJinjaPy ideal for testing new ideas, building proof-of-concept projects, or experimenting with different web features before committing to a larger codebase.
-
-- **Small to Medium Projects:** The structure and flexibility of FlaskJinjaPy make it suitable for personal projects, internal tools, or MVPs (Minimum Viable Products). Its modular design allows you to add new routes, templates, and static assets as your project grows, without unnecessary complexity.
-
-- **Template Customization:** Jinja2 templating enables you to easily extend or modify HTML templates to match your application's requirements. You can create reusable components, implement custom filters, and maintain a clean separation between logic and presentation.
-
-- **Educational and Teaching Tool:** FlaskJinjaPy serves as a practical resource for instructors and students alike. It can be used in workshops, tutorials, or classroom settings to demonstrate core web development concepts and best practices.
-
-This project provides a solid foundation for building web applications that require dynamic content, user interaction, and maintainable code. Whether you're learning, teaching, or rapidly prototyping, FlaskJinjaPy offers a practical and extensible starting point for your Python web development journey.
-
-## Example Use Cases and Related Technologies
-
-Here are some practical scenarios where Flask can be applied, along with specific examples:
-
-- **Personal Portfolio Website:**  
-    Use Flask to build a dynamic portfolio that displays your projects, skills, and blog posts. For example, you can create a `/projects` route that renders a list of projects from a Python data structure or database, and a `/blog` route that displays articles using Jinja2 templates.
-
-- **Internal Dashboards:**  
-    Develop a dashboard for your team to monitor sales, website analytics, or server status. For instance, you can fetch data from an API or database and render interactive charts using libraries like Chart.js, all within a FlaskJinjaPy app.
-
-- **Event Registration Forms:**  
-    Create a registration page for workshops or meetups. Use Flask's form handling to process user input and Jinja2 to display confirmation messages or error feedback. For example, a `/register` route can accept POST requests and store attendee information.
-
-- **API Prototyping:**  
-    Quickly prototype RESTful APIs for a mobile app or frontend framework. For example, add a `/api/data` endpoint that returns JSON responses, and use FlaskJinjaPy's structure to test different API behaviors before full-scale development.
-
-- **Educational Demos:**  
-    Demonstrate web development concepts in a classroom or workshop setting. For example, show how to implement user authentication, template inheritance, or form validation using simple, readable code.
-
-Flask works well alongside the following technologies and tools:
-
-- **Flask Extensions:**  
-    - *Flask-WTF:* Simplifies form creation and validation.  
-    - *Flask-Login:* Adds user authentication and session management.  
-    - *Flask-SQLAlchemy:* Integrates SQL databases for persistent storage.
-
-- **Front-End Libraries:**  
-    - *Bootstrap or Tailwind CSS:* Enhance your site's appearance and responsiveness.  
-    - *Alpine.js or Vanilla JavaScript:* Add interactivity to templates.
-
-- **Testing Tools:**  
-    - *pytest or unittest:* Write automated tests for your routes and logic to ensure reliability.
-
-- **Deployment Platforms:**  
-    - *Heroku, PythonAnywhere, or Docker:* Deploy your FlaskJinjaPy app to the cloud or containers with minimal configuration.
-
-- **Database Backends:**  
-    - *SQLite:* Ideal for lightweight, file-based storage during development.  
-    - *PostgreSQL or MySQL:* Use for production-ready, scalable data storage.
-
-These examples and integrations make FlaskJinjaPy a flexible starting point for a wide range of Python web projects, from simple prototypes to more complex applications.
-
-## Features
-
-- Lightweight Flask web server
-- Jinja2 templating for dynamic HTML
-- Easy to extend and customize
-
-## Getting Started
-https://github.com/authlib/example-oauth2-server/tree/master
-
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/FlaskJinjaPy.git
-    cd FlaskJinjaPy
-    ```
-
-2. **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Set Flask and Authlib environment variables**
-   ```bash
-   # DO NOT SET THIS IN PRODUCTION!
-   export AUTHLIB_INSECURE_TRANSPORT=1
-   ```
-
-4. ** Create Database and Run the application:**
-    ```bash
-    python app.py
-    flask app __init__.py
-    ```
-
-5. **Open your browser:**  
-    Visit [http://localhost:5000](http://localhost:5000)
-
-6. **Passwd flow example**
-       - Get client_id and client_secret
-   ```bash
-   $ curl -u ${client_id}:${client_secret} -XPOST http://127.0.0.1:5000/oauth/token -F grant_type=password -F username=${username} -F password=valid -F scope=profile
-   ```
-      - Note password=valid
-   ```bash
-   $ curl -H "Authorization: Bearer ${access_token}" http://127.0.0.1:5000/api/me
-   ```
-      - Grant Auth, send code to Auth server to get access token
-   ```bash
-   $ curl -u ${client_id}:${client_secret} -XPOST http://127.0.0.1:5000/oauth/token -F grant_type=authorization_code -F scope=profile -F code=${code}
-   ```
-   ```bash
-   $ curl -H "Authorization: Bearer ${access_token}" http://127.0.0.1:5000/api/me
-   ```
-
-8. **Auth flow example**
-       - Test the auth code flow
-   ```bash
-   $ open http://127.0.0.1:5000/oauth/authorize?response_type=code&client_id=${client_id}&scope=profile
-   ```
-
-## Project Structure
-
-```
+    <h2 class="section-title">Project Structure</h2>
+    <div class="project-structure mb-3">
+<pre>
 Flask/
 ├── app.py
 ├── templates/
@@ -128,68 +179,74 @@ Flask/
 ├── static/
 ├── requirements.txt
 └── README.md
-```
+</pre>
+    </div>
 
-     <pre class="bg-light p-3 mt-2" style="height: 200px; overflow-y: auto;">
-        # Virtual Environment Setup
-        python -m venv venv
-        source venv/bin/activate
+    <h2 class="section-title">Virtual Environment &amp; Package Setup</h2>
+    <div class="code-scroll mb-4">
+<pre>
+# Virtual Environment Setup
+python -m venv venv
+source venv/bin/activate
 
-        # Essential Packages
-        pip install flask>=3.0.3
-        opentelemetry-distro                       
-        pip install python-dotenv
-        pip install pytest
-        pip install gunicorn
-        pip install uwsgi
-        pip install mod_wsgi
+# Essential Packages
+pip install flask>=3.0.3
+opentelemetry-distro                       
+pip install python-dotenv
+pip install pytest
+pip install gunicorn
+pip install uwsgi
+pip install mod_wsgi
 
-        # Authentication & Security
-        pip install flask-login
-        pip install flask-security
-        pip install PyJWT
-        pip install flask-jwt-extended
-        pip install passlib
-        pip install bcrypt
+# Authentication & Security
+pip install flask-login
+pip install flask-security
+pip install PyJWT
+pip install flask-jwt-extended
+pip install passlib
+pip install bcrypt
 
-        # ML/AI/Quantum Packages
-        pip install torch torchvision
-        pip install tensorflow
-        pip install transformers
-        pip install huggingface_hub[cli,torch,tensorflow]
-        pip install scikit-learn
-        pip install pandas numpy
-        pip install qiskit
-        pip install cirq
-        pip install pennylane
+# ML/AI/Quantum Packages
+pip install torch torchvision
+pip install tensorflow
+pip install transformers
+pip install huggingface_hub[cli,torch,tensorflow]
+pip install scikit-learn
+pip install pandas numpy
+pip install qiskit
+pip install cirq
+pip install pennylane
 
-        # Monitoring and Logging
-        pip install prometheus_client
-        pip install logging
-        pip install sentry-sdk
-        pip install elastic-apm
-        opentelemetry-exporter-otlp-proto-grpc
-        opentelemetry-instrumentation-flask 
+# Monitoring and Logging
+pip install prometheus_client
+pip install logging
+pip install sentry-sdk
+pip install elastic-apm
+opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-instrumentation-flask 
 
-        # Databases
-        pip install sqlalchemy
-        pip install flask-sqlalchemy
-        pip install flask-migrate
-        pip install redis
-        pip install celery
-        pip install cx_Oracle
-        pip install oracle-db
-        pip install psycopg2-binary
-        pip install pymongo
+# Databases
+pip install sqlalchemy
+pip install flask-sqlalchemy
+pip install flask-migrate
+pip install redis
+pip install celery
+pip install cx_Oracle
+pip install oracle-db
+pip install psycopg2-binary
+pip install pymongo
 
-        # Server Deployment
-        pip install apache2-utils
-        pip install mod_wsgi
-        pip install supervisor
+# Server Deployment
+pip install apache2-utils
+pip install mod_wsgi
+pip install supervisor
 
-        flask run</pre>
+flask run
+</pre>
+    </div>
 
-
-## License
-
-This project is licensed under the MIT License.
+    <h2 class="section-title">License</h2>
+    <p class="license">This project is licensed under the MIT License.</p>
+</div>
+</body>
+</html>

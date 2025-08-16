@@ -1,49 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>RHEL9 Documentation</title>
-<style>
-pre {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 5px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Enterprise Linux Pipeline</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #fafbfc; color: #222; }
+        h1, h2, h3, h4, h5, h6 { margin-top: 1.5em; }
+        pre, code { background: #f4f4f4; border-radius: 4px; padding: 0.5em; }
+        pre { overflow-x: auto; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid #ddd; margin: 2em 0; }
+        ul { margin-left: 2em; }
+        .small { font-size: 0.9em; color: #666; }
+    </style>
 </head>
 <body>
 
-<h1><a href="https://docs.oracle.com/en/operating-systems/oracle-linux/9/">RHEL9 Docs</a></h1>
+    <h1><a href="https://docs.oracle.com/en/operating-systems/oracle-linux/9/">RHEL9 Docs</a></h1>
 
-<h2>Important Directories</h2>
-<ul>
-    <li>/home, /tmp, /var, /var/tmp, /var/log, /var/log/audit, /boot</li>
-    <li>Always shred or clean drives and motherboards upon disposal to prevent credential harvesting.</li>
-</ul>
-<h6>Using Yum repository for backwards compatability</h6>
+    <h2>Important Directories</h2>
+    <ul>
+        <li><code>/</code>, <code>/home</code>, <code>/tmp</code>, <code>/var</code>, <code>/var/tmp</code>, <code>/var/log</code>, <code>/var/log/audit</code>, <code>/boot</code></li>
+        <li>Always shred or clean drives and motherboards upon disposal to prevent credential harvesting.</li>
+        <li><span class="small">Using Yum repository for backwards compatibility</span></li>
+    </ul>
 
-<hr>
+    <hr>
 
-<h2>Network and Development Tools</h2>
-<ul>
-    <li>java, javac, node.js, php, lynx</li>
-</ul>
+    <h2>Network and Development Tools</h2>
+    <ul>
+        <li>java, javac, node.js, php, lynx</li>
+    </ul>
 
-<hr>
+    <hr>
 
-<h2><a href="https://developer.hashicorp.com/terraform/install">Terraform</a></h2>
-<pre><code>sudo yum install -y yum-utils
+    <h2><a href="https://developer.hashicorp.com/terraform/install">Terraform</a></h2>
+    <pre><code>sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-sudo yum -y install terraform</code></pre>
+sudo yum -y install terraform
+</code></pre>
 
-<hr>
+    <hr>
 
-<h2><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/managing_systems_using_the_rhel_9_web_console/index">Cockpit</a></h2>
-<p>Cockpit supports Ubuntu Focal (20.04), ROS-Noetic, and Gazebo (Gazebo not supported on RHEL9).</p>
-<pre><code>$ systemctl enable --now cockpit.socket
-$ sudo dnf install -y cockpit-machines</code></pre>
+    <h2><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html-single/managing_systems_using_the_rhel_9_web_console/index">Cockpit</a></h2>
+    <p>Cockpit supports Ubuntu Focal (20.04), ROS-Noetic, and Gazebo (Gazebo not supported on RHEL9).</p>
+    <pre><code>systemctl enable --now cockpit.socket
+sudo dnf install -y cockpit-machines
+</code></pre>
 
-<!-- Rest of the content follows same pattern -->
-<!-- Truncated for brevity -->
+    <hr>
+
+    <h2><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_and_managing_networking/configuring-a-vpn-connection_configuring-and-managing-networking">VPN Config Guide</a></h2>
+    <ul>
+        <li>Cockpit supports WireGuard VPN (requires FIPS disabled). For production, use Libreswan (Openswan IPsec fork).</li>
+    </ul>
+
+    <hr>
+
+    <h2><a href="https://docs.oracle.com/en/operating-systems/oracle-linux/kvm-user/kvm-InstallingVirtualizationPackages.html">Virtualization Setup</a></h2>
+    <p>Install virtualization packages:</p>
+    <pre><code>sudo dnf group install "Virtualization Host"
+sudo dnf install qemu-kvm libvirt virt-install virt-viewer
+for drv in qemu network nodedev nwfilter secret storage interface; do systemctl start virt${drv}d{,-ro,-admin}.socket; done
+virt-host-validate
+sudo dnf update -y
+sudo dnf install -y pip
+</code></pre>
+
+    <hr>
+
+    <h2><a href="https://go.dev/doc/install">Install Go</a></h2>
+    <pre><code>sudo dnf install -y go
+</code></pre>
+    <strong>AMD/INTEL</strong>
+    <pre><code>curl -LO https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+</code></pre>
+    <strong>ARM</strong>
+    <pre><code>curl https://go.dev/dl/go1.24.2.linux-arm64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.2.linux-arm64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+</code></pre>
+
+    <hr>
+
+    <h2><a href="https://code.visualstudio.com/insiders/">VS Code - Insiders</a></h2>
+    <pre><code>sudo dnf install -y code-insiders
+</code></pre>
+    <p>or</p>
+    <pre><code>cd Downloads && ls
+sudo dnf install (code-insiders).rpm && sudo rm (code-insiders).rpm
+</code></pre>
+    <h3>Github-SSH</h3>
+    <pre><code>ssh-keygen -t rsa -C "comment-here"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+</code></pre>
+    <p>
+        <strong>Copy key &gt; Github &gt; Settings &gt; Add SSH key &gt; Paste key</strong><br>
+        <strong>Title = Machine Name</strong>
+    </p>
+
+    <hr>
+
+    <h2><a href="https://podman-desktop.io/docs/installation">Podman Desktop</a></h2>
+    <pre><code>flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub io.podman_desktop.PodmanDesktop
+flatpak update --user io.podman_desktop.PodmanDesktop
+flatpak run io.podman_desktop.PodmanDesktop
+</code></pre>
+
+    <hr>
+
+    <h2><a href="https://kubernetes.io/docs/tasks/tools/">Kubernetes (K8s)</a></h2>
+    <p>Install Kubernetes tools:</p>
+    <pre><code>cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.32/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.32/rpm/repodata/repomd.xml.key
+exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
+EOF
+sudo yum install -y kubelet kubeadm kubectl cri-tools kubernetes-cni --disableexcludes=kubernetes
+systemctl enable --now kubelet
+go install sigs.k8s.io/kind@v0.27.0
+sudo mv ~/go/bin/kind /bin
+sudo rm -r ~/go
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+sudo rpm -Uvh minikube-latest.x86_64.rpm
+</code></pre>
+
+    <hr>
+
+    <h2>CLIs</h2>
+    <strong>Azure Cloud (AZ)</strong>
+    <pre><code>
+</code></pre>
+    <strong>Google Cloud Platform (GCP)</strong>
+    <pre><code>sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM
+[google-cloud-cli]
+name=Google Cloud CLI
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el9-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+</code></pre>
+    <p>- if using Fedora 34 or 35 install</p>
+    <pre><code>sudo dnf install libxcrypt-compat.x86_64
+</code></pre>
+    <pre><code>sudo dnf install google-cloud-cli
+</code></pre>
+    <p>- reference a file to install additional components</p>
+    <pre><code>google-cloud-cli-anthos-auth
+google-cloud-cli-app-engine-go
+google-cloud-cli-app-engine-grpc
+google-cloud-cli-app-engine-java
+google-cloud-cli-app-engine-python
+google-cloud-cli-app-engine-python-extras
+google-cloud-cli-bigtable-emulator
+google-cloud-cli-cbt
+google-cloud-cli-cloud-build-local
+google-cloud-cli-cloud-run-proxy
+google-cloud-cli-config-connector
+google-cloud-cli-datastore-emulator
+google-cloud-cli-firestore-emulator
+google-cloud-cli-gke-gcloud-auth-plugin
+google-cloud-cli-kpt
+google-cloud-cli-kubectl-oidc
+google-cloud-cli-local-extract
+google-cloud-cli-minikube
+google-cloud-cli-nomos
+google-cloud-cli-pubsub-emulator
+google-cloud-cli-skaffold
+google-cloud-cli-spanner-emulator
+google-cloud-cli-terraform-validator
+google-cloud-cli-tests
+kubectl
+</code></pre>
+    <p>- gcloud auth login works best with chrome browser</p>
+    <pre><code>gcloud init
+gcloud auth login
+</code></pre>
+
+    <strong>Amazon Web Services (AWS)</strong>
+    <pre><code>
+</code></pre>
+
+    <hr>
+
+    <h2><a href="https://docs.oracle.com/en/operating-systems/oracle-linux/cockpit/cockpit-kvm.html">Virtual Machine Creation</a></h2>
 
 </body>
 </html>

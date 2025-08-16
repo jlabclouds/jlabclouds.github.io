@@ -2,74 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Introduction to CMake</title>
+    <title>FlaskJinjaPy - Flask Project Overview</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS for professional styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; color: #222; }
-        h1, h2 { color: #2d5fa4; }
-        code, pre { background: #eee; padding: 2px 6px; border-radius: 4px; }
-        pre { padding: 1em; }
-        ul { margin-bottom: 1em; }
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 40px 32px;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        pre, code {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 1em;
+        }
+        .feature-list li {
+            margin-bottom: 0.5em;
+        }
+        .project-structure {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1em;
+        }
+        .section-title {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+        .license {
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+        .code-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Getting Started with CMake</h1>
-    <p>
-        <strong>CMake</strong> is a cross-platform build system generator. It helps manage the build process of software projects, especially those written in C, C++, and Fortran.
-    </p>
+<div class="container">
+    <h1 class="mb-4">CMakeProject <small class="text-muted fs-5">CMake Project Overview</small></h1>
+    <p class="lead">CMakeProject demonstrates how to use <a href="https://cmake.org/" target="_blank">CMake</a> to configure, build, and manage C/C++ projects in a portable and scalable way.</p>
 
-    <h2>Why Choose CMake?</h2>
-    <ul>
-        <li><strong>Portability:</strong> Generates native build files for many platforms (Unix Makefiles, Visual Studio, Ninja, etc.).</li>
-        <li><strong>Scalability:</strong> Handles small to very large projects with complex dependencies.</li>
-        <li><strong>Integration:</strong> Widely supported by IDEs and CI/CD tools.</li>
-        <li><strong>Modern Features:</strong> Supports modern C++ standards, testing, packaging, and more.</li>
+    <h2 class="section-title">Best Use Cases</h2>
+    <ul class="feature-list">
+        <li><strong>Cross-Platform Builds:</strong> Generate native build files for Windows, Linux, and macOS from a single configuration.</li>
+        <li><strong>Large and Modular Projects:</strong> Organize complex codebases with multiple libraries, executables, and dependencies.</li>
+        <li><strong>Continuous Integration:</strong> Integrate with CI/CD pipelines for automated testing and deployment.</li>
+        <li><strong>Third-Party Library Integration:</strong> Easily find and link external libraries using CMake's <code>find_package</code> and <code>FetchContent</code>.</li>
+        <li><strong>Open Source Distribution:</strong> Provide a familiar build system for contributors and users across platforms.</li>
+    </ul>
+    <p>This project provides a robust starting point for C/C++ development with modern CMake practices and extensibility.</p>
+
+    <h2 class="section-title">Example Use Cases &amp; Related Technologies</h2>
+    <ul class="feature-list">
+        <li><strong>CLI Tools:</strong> Build command-line utilities with cross-platform support.</li>
+        <li><strong>Static and Shared Libraries:</strong> Manage reusable libraries for other projects.</li>
+        <li><strong>Unit Testing:</strong> Integrate with frameworks like GoogleTest or Catch2 for automated testing.</li>
+        <li><strong>Packaging:</strong> Generate installable packages (e.g., DEB, RPM, NSIS) using CPack.</li>
+        <li><strong>IDE Integration:</strong> Generate project files for Visual Studio, Xcode, or CLion.</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Build Tools</h5>
+            <ul>
+                <li>Make, Ninja: Fast build backends</li>
+                <li>Visual Studio, Xcode: IDE generators</li>
+            </ul>
+            <h5>Testing Frameworks</h5>
+            <ul>
+                <li>GoogleTest, Catch2: Unit testing</li>
+                <li>CTest: Built-in CMake test runner</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5>Packaging &amp; Deployment</h5>
+            <ul>
+                <li>CPack: Package generation</li>
+                <li>Conan, vcpkg: Dependency management</li>
+            </ul>
+            <h5>Code Quality</h5>
+            <ul>
+                <li>clang-tidy, cppcheck: Static analysis</li>
+                <li>gcov, lcov: Code coverage</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="section-title">Features</h2>
+    <ul class="feature-list">
+        <li>Modern CMake (3.15+), target-based commands</li>
+        <li>Support for multiple build types (Debug, Release)</li>
+        <li>Automatic dependency discovery and linking</li>
+        <li>Integrated testing and packaging</li>
     </ul>
 
-    <h2>When to Use CMake</h2>
-    <ul>
-        <li>When your project needs to be built on multiple platforms.</li>
-        <li>When you want to manage dependencies and external libraries easily.</li>
-        <li>When you need to automate complex build processes.</li>
-        <li>When you want to integrate with modern development tools and workflows.</li>
-    </ul>
-
-    <h2>Benefits of CMake</h2>
-    <ul>
-        <li>Reduces manual configuration and errors.</li>
-        <li>Improves reproducibility and maintainability of builds.</li>
-        <li>Supports out-of-source builds, keeping source directories clean.</li>
-        <li>Facilitates testing and packaging.</li>
-    </ul>
-
-    <h2>How to Create a CMake Application</h2>
+    <h2 class="section-title">Getting Started</h2>
     <ol>
         <li>
-            <strong>Create a <code>CMakeLists.txt</code> file:</strong>
-            <pre>
-cmake_minimum_required(VERSION 3.10)
-project(MyApp)
-
-add_executable(MyApp main.cpp)
-            </pre>
+            <strong>Clone the repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/CMakeProject.git
+cd CMakeProject</code></pre>
         </li>
         <li>
-            <strong>Generate build files:</strong>
-            <pre>cmake -S . -B build</pre>
+            <strong>Create a build directory and configure the project:</strong>
+            <pre><code>mkdir build
+cd build
+cmake ..</code></pre>
         </li>
         <li>
-            <strong>Build the application:</strong>
-            <pre>cmake --build build</pre>
+            <strong>Build the project:</strong>
+            <pre><code>cmake --build .</code></pre>
         </li>
         <li>
-            <strong>Run your application:</strong>
-            <pre>./build/MyApp</pre>
+            <strong>Run tests (if available):</strong>
+            <pre><code>ctest</code></pre>
+        </li>
+        <li>
+            <strong>Install (optional):</strong>
+            <pre><code>cmake --install . --prefix ../install</code></pre>
+        </li>
+        <li>
+            <strong>Package (optional):</strong>
+            <pre><code>cpack</code></pre>
         </li>
     </ol>
 
-    <h2>Summary</h2>
-    <p>
-        CMake is a powerful tool for managing builds in modern software projects. It is especially useful when portability, scalability, and integration are important. By learning CMake, you can streamline your development workflow and ensure your projects are easy to build and maintain.
-    </p>
-</body>
-</html>
+    <h2 class="section-title">Project Structure</h2>
+    <div class="project-structure mb-3">
+<pre>
+CMakeProject/
+├── CMakeLists.txt
+├── src/
+│   └── main.cpp
+├── include/
+│   └── mylib.hpp
+├── tests/
+│   └── test_main.cpp
+├── cmake/
+│   └── modules/
+├── build/           # (generated)
+├── README.md
+└── LICENSE
+</pre>
+    </div>
+
+    <h2 class="section-title">CMake &amp; Toolchain Setup</h2>
+    <div class="code-scroll mb-4">
+<pre>
+# Install CMake (if not already installed)
+# On Ubuntu:
+sudo apt-get update
+sudo apt-get install cmake build-essential
+
+# On macOS:
+brew install cmake
+
+# On Windows:
+# Download from https://cmake.org/download/
+
+# Install Ninja (optional, for faster builds)
+sudo apt-get install ninja-build
+
+# Install GoogleTest (optional, for unit testing)
+# Using FetchContent in CMakeLists.txt is recommended
+
+# Example: Build and run
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+ctest
+
+# Package the project
+cpack
+</pre>
+    </div>
+
+    <h2 class="section-title">License</h2>
+    <p class="license">This project is licensed under the MIT License.</p>
+</div>

@@ -2,58 +2,223 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Why Choose Rust?</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaskJinjaPy - Flask Project Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS for professional styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 2em; background: #f8f9fa; color: #222; }
-        h1 { color: #b7410e; }
-        code, pre { background: #eee; padding: 0.2em 0.4em; border-radius: 4px; }
-        pre { padding: 1em; }
-        ul { margin-bottom: 1em; }
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 40px 32px;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        pre, code {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 1em;
+        }
+        .feature-list li {
+            margin-bottom: 0.5em;
+        }
+        .project-structure {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            font-size: 1em;
+        }
+        .section-title {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+        .license {
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+        .code-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Why and When to Choose Rust</h1>
+<div class="container">
+    <h1 class="mb-4">RustWebApp <small class="text-muted fs-5">Rust Project Overview</small></h1>
+    <p class="lead">RustWebApp is a project that demonstrates how to build web applications using <a href="https://www.rust-lang.org/" target="_blank">Rust</a> and popular Rust web frameworks like <a href="https://actix.rs/" target="_blank">Actix Web</a> and <a href="https://rocket.rs/" target="_blank">Rocket</a>.</p>
+
+    <h2 class="section-title">Best Use Cases</h2>
+    <ul class="feature-list">
+        <li><strong>Learning Rust Web Development:</strong> Clean, well-documented codebase for beginners to understand web fundamentals in Rust.</li>
+        <li><strong>Prototyping High-Performance Web Apps:</strong> Quickly spin up fast, safe web services for MVPs or proof-of-concept projects.</li>
+        <li><strong>Building APIs and Microservices:</strong> Rust's safety and performance make it ideal for scalable backend APIs.</li>
+        <li><strong>Systems Integration:</strong> Use Rust for web interfaces to high-performance or low-level systems code.</li>
+        <li><strong>Educational and Teaching Tool:</strong> Resource for instructors and students learning modern, type-safe web development.</li>
+    </ul>
+    <p>This project provides a robust foundation for building web applications that require speed, safety, and maintainable code.</p>
+
+    <h2 class="section-title">Example Use Cases &amp; Related Technologies</h2>
+    <ul class="feature-list">
+        <li><strong>RESTful APIs:</strong> Fast, type-safe APIs for web/mobile apps or microservices.</li>
+        <li><strong>Real-time Dashboards:</strong> WebSocket-powered dashboards for analytics or monitoring.</li>
+        <li><strong>Authentication Services:</strong> Secure login, JWT, and OAuth2 flows using Rust crates.</li>
+        <li><strong>Static Site Generators:</strong> Build static sites with Rust for speed and safety.</li>
+        <li><strong>Educational Demos:</strong> Demonstrate async, error handling, and web security in Rust.</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Rust Web Frameworks</h5>
+            <ul>
+                <li>Actix Web: High-performance, actor-based</li>
+                <li>Rocket: Ergonomic, batteries-included</li>
+                <li>Axum: Tokio-based, modular</li>
+            </ul>
+            <h5>Front-End Libraries</h5>
+            <ul>
+                <li>Yew, Leptos: Rust-based web frontends (WASM)</li>
+                <li>Bootstrap, Tailwind CSS: Styling &amp; responsiveness</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5>Testing Tools</h5>
+            <ul>
+                <li>cargo test: Unit &amp; integration testing</li>
+                <li>mockito: HTTP mocking</li>
+            </ul>
+            <h5>Deployment Platforms</h5>
+            <ul>
+                <li>Docker, Heroku, Fly.io: Cloud/container deployment</li>
+            </ul>
+            <h5>Database Backends</h5>
+            <ul>
+                <li>PostgreSQL, MySQL, SQLite: via Diesel or SQLx</li>
+                <li>Redis, MongoDB: via respective crates</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="section-title">Features</h2>
+    <ul class="feature-list">
+        <li>High-performance async web server</li>
+        <li>Type-safe routing and request handling</li>
+        <li>Easy to extend and customize</li>
+        <li>Strong compile-time guarantees</li>
+    </ul>
+
+    <h2 class="section-title">Getting Started</h2>
     <p>
-        <strong>Rust</strong> is a modern systems programming language focused on safety, speed, and concurrency. It is an excellent choice for projects where performance and reliability are critical.
+        <a href="https://github.com/actix/examples" target="_blank">Reference: Actix Web Examples</a>
     </p>
-    <h2>When to Choose Rust</h2>
-    <ul>
-        <li>When you need <strong>memory safety</strong> without a garbage collector.</li>
-        <li>For <strong>high-performance</strong> applications (e.g., game engines, operating systems, web servers).</li>
-        <li>When building <strong>concurrent</strong> or <strong>parallel</strong> software.</li>
-        <li>For <strong>cross-platform</strong> development (Linux, Windows, macOS, WebAssembly).</li>
-        <li>When you want <strong>modern tooling</strong> and a growing ecosystem.</li>
-    </ul>
-    <h2>Benefits of Rust</h2>
-    <ul>
-        <li><strong>Memory Safety:</strong> Prevents common bugs like null pointer dereferencing and buffer overflows.</li>
-        <li><strong>Zero-cost Abstractions:</strong> High-level features with no runtime overhead.</li>
-        <li><strong>Concurrency:</strong> Safe and efficient multithreading.</li>
-        <li><strong>Performance:</strong> Comparable to C and C++.</li>
-        <li><strong>Tooling:</strong> Cargo (package manager), rustfmt (formatter), clippy (linter).</li>
-        <li><strong>Growing Community:</strong> Active development and support.</li>
-    </ul>
-    <h2>How to Create a Rust Application</h2>
     <ol>
         <li>
-            <strong>Install Rust:</strong><br>
-            <pre>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
+            <strong>Install Rust toolchain:</strong>
+            <pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
         </li>
         <li>
-            <strong>Create a new project:</strong><br>
-            <pre>cargo new my_app</pre>
+            <strong>Clone the repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/RustWebApp.git
+cd RustWebApp</code></pre>
         </li>
         <li>
-            <strong>Build and run your application:</strong><br>
-            <pre>
-cd my_app
-cargo run
-            </pre>
+            <strong>Install dependencies:</strong>
+            <pre><code>cargo build</code></pre>
+        </li>
+        <li>
+            <strong>Run the application:</strong>
+            <pre><code>cargo run</code></pre>
+        </li>
+        <li>
+            <strong>Open your browser:</strong>
+            <br>
+            Visit <a href="http://localhost:8080" target="_blank">http://localhost:8080</a>
+        </li>
+        <li>
+            <strong>Example API call</strong>
+            <pre><code>curl http://127.0.0.1:8080/api/hello</code></pre>
         </li>
     </ol>
-    <p>
-        For more information, visit the <a href="https://www.rust-lang.org/">official Rust website</a>.
-    </p>
-</body>
-</html>
+
+    <h2 class="section-title">Project Structure</h2>
+    <div class="project-structure mb-3">
+<pre>
+RustWebApp/
+├── src/
+│   ├── main.rs
+│   ├── handlers.rs
+│   └── models.rs
+├── Cargo.toml
+├── Cargo.lock
+├── templates/
+│   └── index.html
+├── static/
+└── README.md
+</pre>
+    </div>
+
+    <h2 class="section-title">Development &amp; Package Setup</h2>
+    <div class="code-scroll mb-4">
+<pre>
+# Install Rust toolchain
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Create new project
+cargo new rustwebapp
+cd rustwebapp
+
+# Essential Dependencies (add to Cargo.toml)
+actix-web = "4"
+rocket = "0.5"
+axum = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tera = "1.19"
+askama = "0.12"
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
+log = "0.4"
+env_logger = "0.10"
+
+# Authentication & Security
+jsonwebtoken = "9"
+argon2 = "0.5"
+bcrypt = "0.15"
+actix-identity = "0.5"
+oauth2 = "4"
+
+# Database & Async
+sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls"] }
+diesel = { version = "2.1", features = ["postgres"] }
+mongodb = "2"
+redis = "0.24"
+
+# Testing
+mockito = "1"
+reqwest = { version = "0.11", features = ["json"] }
+
+# Monitoring and Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+prometheus = "0.13"
+sentry = "0.32"
+
+# Build & Run
+cargo build
+cargo run
+</pre>
+    </div>
+
+    <h2 class="section-title">License</h2>
+    <p class="license">This project is licensed under the MIT License.</p>
+</div>

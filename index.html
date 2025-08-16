@@ -156,217 +156,50 @@
                 <div class="tab-content mt-3">
                     <div class="tab-pane fade show active" id="aspire" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/FrameworkTemplates/blob/main/FrameworkTemplates/ReadMe.md" target="_blank"><h5>Aspire</h5></a>
-                            <pre class="bg-light p-3 mt-2" style="height: 200px; overflow-y: auto;">
-    # Basic .NET Commands
-     dotnet new list
-     dotnet new webapi
-     dotnet build
-     dotnet run
-     dotnet test
-     dotnet publish
-
-     # Package Management
-     dotnet add package Azure.Identity
-     dotnet add package Azure.Security.KeyVault.Secrets
-     dotnet add package Microsoft.ML
-     dotnet add package Microsoft.EntityFrameworkCore
-     dotnet package find -verbosity detailed azure.authentication
-
-     # Project Templates
-     dotnet new aspire-starter --name MyProject
-     dotnet new blazor
-     dotnet new mvc
-
-     # Authentication & Security
-     dotnet add package Microsoft.Identity.Web
-     dotnet add package Azure.Identity
-     dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
-
-     # Monitoring & Logging
-     dotnet add package Application Insights
-     dotnet add package Serilog.AspNetCore
-     dotnet add package OpenTelemetry
-
-    # Data & Storage
-    dotnet add package Microsoft.EntityFrameworkCore
-    dotnet add package Microsoft.EntityFrameworkCore.SQLite
-    dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-    dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
-    dotnet add package Oracle.EntityFrameworkCore
-    dotnet add package MySql.EntityFrameworkCore
-    dotnet add package Pomelo.EntityFrameworkCore.MySql
-    dotnet add package Azure.Storage.Blobs
-    dotnet add package Microsoft.Azure.Cosmos
-    dotnet add package MongoDB.Driver
-    dotnet add package Cassandra.Driver
-    dotnet add package StackExchange.Redis
-
-     # Messaging & Integration
-     dotnet add package Azure.Messaging.ServiceBus
-     dotnet add package MassTransit
-     dotnet add package RabbitMQ.Client
-
-     # Configuration & Secrets
-     dotnet add package Azure.Security.KeyVault.Secrets
-     dotnet add package Microsoft.Extensions.Configuration.AzureKeyVault
-                                                          
-     # Caching & Performance
-     dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis
-     dotnet add package Polly
-                                                          
-     # ML.NET and AI Packages
-     dotnet add package TorchSharp
-     dotnet add package Microsoft.ML.TorchSharp
-     dotnet add package Microsoft.SemanticKernel
-     dotnet add package Microsoft.ML.FastTree
-     dotnet add package Microsoft.ML.LightGbm
-     dotnet add package PytorchSharp.OpenCL
-     dotnet add package Microsoft.ML.OnnxRuntime
-     dotnet add package Microsoft.ML.Vision
-     dotnet add package Microsoft.ML.Recommender
-     dotnet add package Microsoft.ML.AutoML
-                            
-    # Quantum Development
-     dotnet add package Microsoft.Quantum.Development.Kit
-     dotnet add package Microsoft.Quantum.Runtime.Core
-     dotnet add package Microsoft.Quantum.Simulators
-     dotnet add package Microsoft.Quantum.Standard
-     dotnet add package Microsoft.Quantum.Numerics
-     dotnet add package Microsoft.Quantum.QSharp.Core
-     dotnet add package Microsoft.Quantum.EntryPoint.Runtime
-     dotnet add package Microsoft.Quantum.NetworkingLibrary</pre>
+                            <iframe src="https://github.com/jlabclouds/FrameworkTemplates/tree/main/FrameworkTemplates" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="flask" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/Flask/blob/master/README.md" target="_blank"><h5>Flask</h5></a>
-                            <pre class="bg-light p-3 mt-2" style="height: 200px; overflow-y: auto;">
-        # Virtual Environment Setup
-        python -m venv venv
-        source venv/bin/activate
-
-        # Essential Packages
-        pip install flask>=3.0.3
-        opentelemetry-distro                       
-        pip install python-dotenv
-        pip install pytest
-        pip install gunicorn
-        pip install uwsgi
-        pip install mod_wsgi
-
-        # Authentication & Security
-        pip install flask-login
-        pip install flask-security
-        pip install PyJWT
-        pip install flask-jwt-extended
-        pip install passlib
-        pip install bcrypt
-
-        # ML/AI/Quantum Packages
-        pip install torch torchvision
-        pip install tensorflow
-        pip install transformers
-        pip install huggingface_hub[cli,torch,tensorflow]
-        pip install scikit-learn
-        pip install pandas numpy
-        pip install qiskit
-        pip install cirq
-        pip install pennylane
-
-        # Monitoring and Logging
-        pip install prometheus_client
-        pip install logging
-        pip install sentry-sdk
-        pip install elastic-apm
-        opentelemetry-exporter-otlp-proto-grpc
-        opentelemetry-instrumentation-flask 
-
-        # Databases
-        pip install sqlalchemy
-        pip install flask-sqlalchemy
-        pip install flask-migrate
-        pip install redis
-        pip install celery
-        pip install cx_Oracle
-        pip install oracle-db
-        pip install psycopg2-binary
-        pip install pymongo
-
-        # Server Deployment
-        pip install apache2-utils
-        pip install mod_wsgi
-        pip install supervisor
-
-        flask run</pre> 
+                            <iframe src="apps/neptune.html" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="rust" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <h5>Rust Project</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/rust-template" target="_blank">View Documentation</a>
-                            <pre class="bg-light p-3 mt-2">
-        cargo new my_project
-        cd my_project
-        cargo build
-        cargo run</pre>
+                            <iframe src="apps/neptune.html" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="cmake" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <h5>CMake C/C++ Project</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/FrameworkTemplates/blob/main/FrameworkTemplates/CMake/cmake-main/README.md" target="_blank">View Documentation</a>
-                            <pre class="bg-light p-3 mt-2">
-        mkdir build && cd build
-        cmake ..
-        make</pre>
+                            <iframe src="https://github.com/jlabclouds/FrameworkTemplates/blob/main/FrameworkTemplates/CMake/cmake-main/README.md" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="react" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <h5>React Application</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/React-ASP-TS-CS" target="_blank">View Documentation</a>
-                            <pre class="bg-light p-3 mt-2">
-        npm create vite@latest my-app -- --template react-ts
-        cd my-app
-        npm install
-        npm run dev</pre>
+                            <iframe src="apps/neptune.html" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="k8s" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <h5>Kubernetes Deployment</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/k8s-template" target="_blank">View Documentation</a>
-                            <pre class="bg-light p-3 mt-2">
-        kubectl create namespace my-app
-        kubectl apply -f deployment.yaml
-        kubectl get pods -n my-app</pre>
+                            <iframe src="https://kubernetes.io" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="el9" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
-                            <h5>Enterprise Linux</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="linux/README.md" target="_blank">View Documentation</a>
-                            <p><a class="btn btn-primary w-100" href="linux/el9_setup.html" target="_blank">Setup</a></p>
-                            <button class="btn btn-default w-100 mb-2" onclick="copyCurlCommand(`curl -fsSL https://raw.githubusercontent.com/jlabclouds/jlabclouds.github.io/refs/heads/main/linux/el9_setup.sh -o el9_setup.sh
-                            sudo bash el9_setup.sh`)">Curl</button>
-                            <pre class="bg-light p-3 mt-2">
-                                    
-                            </pre>
+                            <iframe src="https://raw.githubusercontent.com/jlabclouds/jlabclouds2/refs/heads/main/linux/el9_setup.html" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="ros" role="tabpanel">
                         <div class="bg-white p-3 rounded shadow-sm">
                             <h5>Ros</h5>
-                            <a class="btn btn-primary w-100 mb-2" href="https://github.com/jlabclouds/k8s-template" target="_blank">View Documentation</a>
-                            <iframe src="apps/neptune.html" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
+                            <iframe src="https://github.com/jlabclouds/jlabclouds2/blob/main/jlabclouds/IsaacSim.md" width="100%" height="600px" frameborder="0" style="overflow-y: auto;"></iframe>
                 </div>
             </div>
         </div>

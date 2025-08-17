@@ -156,7 +156,7 @@ EOF
 
 # Create base template
 cat > "$project_dir/templates/base.html" << 'EOF'
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -169,7 +169,7 @@ cat > "$project_dir/templates/base.html" << 'EOF'
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
-EOF
+EOF-->
 
 # Update requirements.txt
 cat > "$project_dir/requirements.txt" << EOF

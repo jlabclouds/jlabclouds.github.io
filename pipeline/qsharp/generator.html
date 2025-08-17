@@ -1,0 +1,200 @@
+<!-- Keep the same HTML structure, just update the content -->
+<div class="alert alert-info mt-3">
+    <h5>Description</h5>
+    <p>This shell script automatically generates a complete Quantum Computing project structure with the following features:</p>
+    <ul>
+        <li>Creates a standardized quantum project structure</li>
+        <li>Sets up quantum circuit templates</li>
+        <li>Configures quantum simulator integration</li>
+        <li>Includes deployment options for various quantum platforms</li>
+        <li>Generates necessary configuration files for quantum frameworks</li>
+    </ul>
+    <h5 class="mt-3">Project Structure</h5>
+    <pre class="mb-0"><code>quantum_project/
+├── circuits/
+│   ├── templates/
+│   ├── custom/
+│   └── __init__.py
+├── algorithms/
+│   ├── qft/
+│   ├── grover/
+│   ├── shor/
+│   └── __init__.py
+├── optimization/
+│   ├── qaoa/
+│   ├── vqe/
+│   └── __init__.py
+├── error_correction/
+│   ├── surface_codes/
+│   ├── stabilizers/
+│   └── __init__.py
+├── simulators/
+│   ├── statevector/
+│   ├── density_matrix/
+│   └── noise_models/
+├── backends/
+│   ├── ibm/
+│   ├── google/
+│   ├── rigetti/
+│   └── local/
+├── visualization/
+│   ├── bloch_sphere/
+│   ├── circuit_diagrams/
+│   └── __init__.py
+├── utils/
+│   ├── gates/
+│   ├── measurements/
+│   └── __init__.py
+├── tests/
+│   ├── unit/
+│   └── integration/
+├── docs/
+├── results/
+│   ├── experiments/
+│   └── benchmarks/
+├── config/
+│   └── config.py
+├── requirements.txt
+└── README.md</code></pre>
+</div>
+#!/bin/bash
+
+# Script to generate Quantum Computing project structure
+
+# Main project directory
+PROJECT_NAME="quantum_project"
+
+# Create main project directory
+mkdir -p $PROJECT_NAME
+
+# Create the directory structure
+directories=(
+    "circuits/templates"
+    "circuits/custom"
+    "algorithms/qft"
+    "algorithms/grover"
+    "algorithms/shor"
+    "optimization/qaoa"
+    "optimization/vqe"
+    "error_correction/surface_codes"
+    "error_correction/stabilizers"
+    "simulators/statevector"
+    "simulators/density_matrix"
+    "simulators/noise_models"
+    "backends/ibm"
+    "backends/google"
+    "backends/rigetti"
+    "backends/local"
+    "visualization/bloch_sphere"
+    "visualization/circuit_diagrams"
+    "utils/gates"
+    "utils/measurements"
+    "tests/unit"
+    "tests/integration"
+    "docs"
+    "results/experiments"
+    "results/benchmarks"
+    "config"
+)
+
+# Create directories and __init__.py files
+for dir in "${directories[@]}"; do
+    mkdir -p "$PROJECT_NAME/$dir"
+    
+    # Add __init__.py to Python package directories
+    if [[ $dir == circuits/* ]] || [[ $dir == algorithms/* ]] || [[ $dir == optimization/* ]] || \
+       [[ $dir == error_correction/* ]] || [[ $dir == visualization/* ]] || [[ $dir == utils/* ]]; then
+        touch "$PROJECT_NAME/$dir/__init__.py"
+    fi
+done
+
+# Create root level __init__.py files
+touch "$PROJECT_NAME/circuits/__init__.py"
+touch "$PROJECT_NAME/algorithms/__init__.py"
+touch "$PROJECT_NAME/optimization/__init__.py"
+touch "$PROJECT_NAME/error_correction/__init__.py"
+touch "$PROJECT_NAME/visualization/__init__.py"
+touch "$PROJECT_NAME/utils/__init__.py"
+
+# Create basic configuration file
+echo "# Quantum Project Configuration" > "$PROJECT_NAME/config/config.py"
+
+# Create requirements.txt
+touch "$PROJECT_NAME/requirements.txt"
+
+# Create README.md with basic content
+cat > "$PROJECT_NAME/README.md" << EOL
+# Quantum Computing Project
+
+Project structure for quantum computing applications.
+
+## Structure
+
+This project includes:
+- Quantum circuits and templates
+- Quantum algorithms implementation
+- Optimization algorithms
+- Error correction mechanisms
+- Multiple backend support
+- Visualization tools
+
+## Setup
+
+1. Install requirements:
+\`\`\`
+pip install -r requirements.txt
+\`\`\`
+
+## Usage
+
+[Add usage instructions here]
+EOL
+
+echo "Quantum Computing project structure created successfully in ./$PROJECT_NAME"
+
+
+
+<!-- ... (keeping the same HTML header and navigation) ... -->
+
+<div class="alert alert-info mt-3">
+    <h5>Description</h5>
+    <p>This shell script generates a Q# quantum computing project structure with specialized paths for:</p>
+    <ul>
+        <li>Quantum Network Protocols</li>
+        <li>Quantum-Classical Hybrid Systems</li>
+        <li>Medical Imaging & Diagnostics</li>
+        <li>Quantum Machine Learning</li>
+        <li>Robotics Control Systems</li>
+    </ul>
+    <h5 class="mt-3">Project Structure</h5>
+    <pre class="mb-0"><code>project_name/
+├── src/
+│   ├── Classical/
+│   │   └── Host.cs
+│   ├── Quantum/
+│   │   ├── Operations.qs
+│   │   ├── Algorithms/
+│   │   ├── ErrorCorrection/
+│   │   └── Utilities/
+│   ├── Specializations/
+│   │   ├── Medical/
+│   │   │   ├── Imaging/
+│   │   │   └── Diagnostics/
+│   │   ├── Robotics/
+│   │   │   ├── Control/
+│   │   │   └── Sensing/
+│   │   └── Networks/
+│   │       ├── Protocols/
+│   │       └── Entanglement/
+│   └── QML/
+│       ├── Models/
+│       └── Training/
+├── tests/
+│   ├── Classical/
+│   └── Quantum/
+├── lib/
+├── config/
+├── docs/
+└── tools/</code></pre>
+</div>
+

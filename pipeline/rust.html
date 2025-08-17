@@ -2,223 +2,185 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FlaskJinjaPy - Flask Project Overview</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS for professional styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: #f8f9fa;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-        .container {
-            max-width: 900px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-            padding: 40px 32px;
-        }
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-        pre, code {
-            background: #f5f5f5;
-            border-radius: 6px;
-            padding: 12px;
-            font-size: 1em;
-        }
-        .feature-list li {
-            margin-bottom: 0.5em;
-        }
-        .project-structure {
-            background: #f5f5f5;
-            border-radius: 6px;
-            padding: 16px;
-            font-family: 'Fira Mono', 'Consolas', monospace;
-            font-size: 1em;
-        }
-        .section-title {
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 6px;
-            margin-bottom: 18px;
-        }
-        .license {
-            font-size: 0.95em;
-            color: #6c757d;
-        }
-        .code-scroll {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Project Generator Script</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="container">
-    <h1 class="mb-4">RustWebApp <small class="text-muted fs-5">Rust Project Overview</small></h1>
-    <p class="lead">RustWebApp is a project that demonstrates how to build web applications using <a href="https://www.rust-lang.org/" target="_blank">Rust</a> and popular Rust web frameworks like <a href="https://actix.rs/" target="_blank">Actix Web</a> and <a href="https://rocket.rs/" target="_blank">Rocket</a>.</p>
-
-    <h2 class="section-title">Best Use Cases</h2>
-    <ul class="feature-list">
-        <li><strong>Learning Rust Web Development:</strong> Clean, well-documented codebase for beginners to understand web fundamentals in Rust.</li>
-        <li><strong>Prototyping High-Performance Web Apps:</strong> Quickly spin up fast, safe web services for MVPs or proof-of-concept projects.</li>
-        <li><strong>Building APIs and Microservices:</strong> Rust's safety and performance make it ideal for scalable backend APIs.</li>
-        <li><strong>Systems Integration:</strong> Use Rust for web interfaces to high-performance or low-level systems code.</li>
-        <li><strong>Educational and Teaching Tool:</strong> Resource for instructors and students learning modern, type-safe web development.</li>
-    </ul>
-    <p>This project provides a robust foundation for building web applications that require speed, safety, and maintainable code.</p>
-
-    <h2 class="section-title">Example Use Cases &amp; Related Technologies</h2>
-    <ul class="feature-list">
-        <li><strong>RESTful APIs:</strong> Fast, type-safe APIs for web/mobile apps or microservices.</li>
-        <li><strong>Real-time Dashboards:</strong> WebSocket-powered dashboards for analytics or monitoring.</li>
-        <li><strong>Authentication Services:</strong> Secure login, JWT, and OAuth2 flows using Rust crates.</li>
-        <li><strong>Static Site Generators:</strong> Build static sites with Rust for speed and safety.</li>
-        <li><strong>Educational Demos:</strong> Demonstrate async, error handling, and web security in Rust.</li>
-    </ul>
-    <div class="row">
-        <div class="col-md-6">
-            <h5>Rust Web Frameworks</h5>
-            <ul>
-                <li>Actix Web: High-performance, actor-based</li>
-                <li>Rocket: Ergonomic, batteries-included</li>
-                <li>Axum: Tokio-based, modular</li>
-            </ul>
-            <h5>Front-End Libraries</h5>
-            <ul>
-                <li>Yew, Leptos: Rust-based web frontends (WASM)</li>
-                <li>Bootstrap, Tailwind CSS: Styling &amp; responsiveness</li>
-            </ul>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/pipeline/rust/rust.html">Oph Logo</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/pipeline/rust/generator.html">Generator</a>
+                <a class="nav-link" href="#download">Download</a>
+                <a class="nav-link" href="https://doc.rust-lang.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+            </div>
         </div>
-        <div class="col-md-6">
-            <h5>Testing Tools</h5>
-            <ul>
-                <li>cargo test: Unit &amp; integration testing</li>
-                <li>mockito: HTTP mocking</li>
-            </ul>
-            <h5>Deployment Platforms</h5>
-            <ul>
-                <li>Docker, Heroku, Fly.io: Cloud/container deployment</li>
-            </ul>
-            <h5>Database Backends</h5>
-            <ul>
-                <li>PostgreSQL, MySQL, SQLite: via Diesel or SQLx</li>
-                <li>Redis, MongoDB: via respective crates</li>
-            </ul>
-        </div>
-    </div>
+    </nav>
 
-    <h2 class="section-title">Features</h2>
-    <ul class="feature-list">
-        <li>High-performance async web server</li>
-        <li>Type-safe routing and request handling</li>
-        <li>Easy to extend and customize</li>
-        <li>Strong compile-time guarantees</li>
-    </ul>
-
-    <h2 class="section-title">Getting Started</h2>
-    <p>
-        <a href="https://github.com/actix/examples" target="_blank">Reference: Actix Web Examples</a>
-    </p>
-    <ol>
-        <li>
-            <strong>Install Rust toolchain:</strong>
-            <pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
-        </li>
-        <li>
-            <strong>Clone the repository:</strong>
-            <pre><code>git clone https://github.com/yourusername/RustWebApp.git
-cd RustWebApp</code></pre>
-        </li>
-        <li>
-            <strong>Install dependencies:</strong>
-            <pre><code>cargo build</code></pre>
-        </li>
-        <li>
-            <strong>Run the application:</strong>
-            <pre><code>cargo run</code></pre>
-        </li>
-        <li>
-            <strong>Open your browser:</strong>
-            <br>
-            Visit <a href="http://localhost:8080" target="_blank">http://localhost:8080</a>
-        </li>
-        <li>
-            <strong>Example API call</strong>
-            <pre><code>curl http://127.0.0.1:8080/api/hello</code></pre>
-        </li>
-    </ol>
-
-    <h2 class="section-title">Project Structure</h2>
-    <div class="project-structure mb-3">
-<pre>
-RustWebApp/
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h1 class="card-title">Rust Project Generator Script</h1>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5>Description</h5>
+                            <p>This shell script automatically generates a complete Rust project structure with the following features:</p>
+                            <ul>
+                                <li>Creates a standardized directory structure</li>
+                                <li>Sets up authentication modules</li>
+                                <li>Configures database integration</li>
+                                <li>Includes deployment options</li>
+                                <li>Generates necessary configuration files</li>
+                            </ul>
+                            <h5 class="mt-3">Project Structure</h5>
+                            <pre class="mb-0"><code>project_name/
 ├── src/
+│   ├── api/
+│   │   └── mod.rs
+│   ├── auth/
+│   │   └── mod.rs
+│   ├── config/
+│   │   └── mod.rs
+│   ├── db/
+│   │   ├── migrations/
+│   │   ├── models/
+│   │   └── mod.rs
+│   ├── handlers/
+│   │   └── mod.rs
+│   ├── utils/
+│   │   └── mod.rs
 │   ├── main.rs
-│   ├── handlers.rs
-│   └── models.rs
+│   └── lib.rs
+├── tests/
+│   ├── integration/
+│   └── unit/
+├── benches/
+├── docs/
+├── .cargo/
+│   └── config.toml
 ├── Cargo.toml
 ├── Cargo.lock
-├── templates/
-│   └── index.html
-├── static/
-└── README.md
-</pre>
-    </div>
+├── .env
+├── .gitignore
+├── README.md
+└── docker-compose.yml</code></pre>
+                        </div>
 
-    <h2 class="section-title">Development &amp; Package Setup</h2>
-    <div class="code-scroll mb-4">
-<pre>
-# Install Rust toolchain
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                        <h5 class="mt-4">Script Source Code</h5>
+                        <pre><code class="language-bash">#!/bin/bash
 
-# Create new project
-cargo new rustwebapp
-cd rustwebapp
+# Ask for project name
+read -p "Enter your Rust project name: " project_name
 
-# Essential Dependencies (add to Cargo.toml)
-actix-web = "4"
-rocket = "0.5"
-axum = "0.7"
+# Validate project name
+if [ -z "$project_name" ]; then
+    echo "Project name cannot be empty."
+    exit 1
+fi
+
+# Create new Rust project
+cargo new "$project_name"
+cd "$project_name"
+
+# Create directory structure
+mkdir -p src/{api,auth,config,db/{migrations,models},handlers,utils}
+mkdir -p tests/{integration,unit}
+mkdir -p benches docs
+
+# Create mod.rs files
+touch src/api/mod.rs
+touch src/auth/mod.rs
+touch src/config/mod.rs
+touch src/db/mod.rs
+touch src/handlers/mod.rs
+touch src/utils/mod.rs
+
+# Update Cargo.toml with dependencies
+cat > Cargo.toml << EOF
+[package]
+name = "$project_name"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+axum = "0.6"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-tera = "1.19"
-askama = "0.12"
-tokio = { version = "1", features = ["full"] }
-dotenv = "0.15"
-log = "0.4"
-env_logger = "0.10"
-
-# Authentication & Security
-jsonwebtoken = "9"
-argon2 = "0.5"
-bcrypt = "0.15"
-actix-identity = "0.5"
-oauth2 = "4"
-
-# Database & Async
-sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls"] }
-diesel = { version = "2.1", features = ["postgres"] }
-mongodb = "2"
-redis = "0.24"
-
-# Testing
-mockito = "1"
-reqwest = { version = "0.11", features = ["json"] }
-
-# Monitoring and Logging
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres"] }
 tracing = "0.1"
 tracing-subscriber = "0.3"
-prometheus = "0.13"
-sentry = "0.32"
+dotenv = "0.15"
+tower = "0.4"
+tower-http = { version = "0.4", features = ["trace"] }
 
-# Build & Run
-cargo build
-cargo run
-</pre>
-    </div>
+[dev-dependencies]
+tokio-test = "0.4"
+EOF
 
-    <h2 class="section-title">License</h2>
-    <p class="license">This project is licensed under the MIT License.</p>
-</div>
+# Create main.rs
+cat > src/main.rs << 'EOF'
+mod api;
+mod auth;
+mod config;
+mod db;
+mod handlers;
+mod utils;
+
+#[tokio::main]
+async fn main() {
+    println!("Hello, Rust!");
+}
+EOF
+
+# Create .env
+cat > .env << EOF
+DATABASE_URL=postgres://user:password@localhost:5432/dbname
+EOF
+
+# Create docker-compose.yml
+cat > docker-compose.yml << EOF
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: dbname
+    ports:
+      - "5432:5432"
+EOF
+
+echo "Rust project '$project_name' created successfully!"
+echo "Run 'cargo build' to compile the project"</code></pre>
+
+                        <div class="mt-4">
+                            <h5>Usage</h5>
+                            <ol>
+                                <li>Save the script to a file (e.g., <code>create_rust_project.sh</code>)</li>
+                                <li>Make it executable: <code>chmod +x create_rust_project.sh</code></li>
+                                <li>Run: <code>./create_rust_project.sh</code></li>
+                                <li>Follow the prompts to set up your project</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2024 Rust Project Generator</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+</body>
+</html>

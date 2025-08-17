@@ -160,21 +160,20 @@ source .venv/bin/activate
 # .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install PyQt6 PyQtWebEngine
-pip install --upgrade huggingface_hub
-pip install -U "huggingface_hub[cli]"
+pip install -U huggingface_hub[cli,torch,tensorflow]
 pip install --upgrade tensorflow
 # Current stable release for GPU (Linux / WSL2)
 pip install tensorflow[and-cuda]
 
 # Create requirements.txt
-cat <<EOF | sudo tee /my_flask_app/requirements.txt
-Flask>=3.0.3
+cat &lt;&lt;EOF | sudo tee /my_flask_app/requirements.txt
+Flask&gt;=3.0.3
 Flask-SQLAlchemy
 Authlib
 EOF
 
 # Create main.py, runserver.py
-cat <<EOF | sudo tee /my_flask_app/main.py
+cat &lt;&lt;EOF | sudo tee /my_flask_app/main.py
 import os
 import flask
 EOF

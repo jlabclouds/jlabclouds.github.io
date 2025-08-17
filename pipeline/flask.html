@@ -123,7 +123,7 @@
     <ol>
         <li>
             <strong>Clone the repository:</strong>
-            <pre><code>git clone https://github.com/yourusername/Flask.git
+            <pre><code>git clone https://github.com/jlabclouds/Flask.git
 cd Flask</code></pre>
         </li>
         <li>
@@ -144,6 +144,42 @@ flask app __init__.py</code></pre>
             <strong>Open your browser:</strong>
             <br>
             Visit <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>
+        </li>
+        <li>
+            <strong>Access the API:</strong>
+            <pre><code>curl http://localhost:5000/api</code></pre>
+            <p>Check the API response in your terminal.</p>
+        </li>
+        <li>
+            <strong>From Scratch</strong>
+            <pre><code>mkdir my_flask_app
+cd ~/my_flask_app
+python -m venv .venv
+source .venv/bin/activate
+# Windows
+# .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install PyQt6 PyQtWebEngine
+pip install --upgrade huggingface_hub
+pip install -U "huggingface_hub[cli]"
+pip install --upgrade tensorflow
+# Current stable release for GPU (Linux / WSL2)
+pip install tensorflow[and-cuda]
+
+# Create requirements.txt
+cat <<EOF | sudo tee /my_flask_app/requirements.txt
+Flask>=3.0.3
+Flask-SQLAlchemy
+Authlib
+EOF
+
+# Create main.py, runserver.py
+cat <<EOF | sudo tee /my_flask_app/main.py
+import os
+import flask
+EOF
+
+python -m pip install -r requirements.txt</code></pre>
         </li>
         <li>
             <strong>Passwd flow example</strong>

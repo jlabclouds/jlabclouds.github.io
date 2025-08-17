@@ -39,7 +39,7 @@ if [ -d "$project_dir" ]; then
     exit 1
 fi
 
-# Create enhanced project structure
+# Create Aspire project structure
 mkdir -p "$project_dir/templates"
 mkdir -p "$project_dir/static/{css,js,images}"
 mkdir -p "$project_dir/$project_name"
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     app.run()
 EOF
 
-# Create enhanced app.py
+# Create Aspire app.py
 cat > "$project_dir/$project_name/app.py" << 'EOF'
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -156,7 +156,7 @@ EOF
 
 # Create base template
 cat > "$project_dir/templates/base.html" << 'EOF'
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -169,7 +169,7 @@ cat > "$project_dir/templates/base.html" << 'EOF'
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
-EOF-->
+EOF
 
 # Update requirements.txt
 cat > "$project_dir/requirements.txt" << EOF
@@ -231,7 +231,7 @@ logs/
 htmlcov/
 EOF
 
-echo "Enhanced Flask project '$project_name' created at $project_dir"
+echo "Aspire Flask project '$project_name' created at $project_dir"
 # Create and activate virtual environment
 python3 -m venv "$project_dir/venv"
 source "$project_dir/venv/bin/activate"

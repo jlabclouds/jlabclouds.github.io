@@ -13,7 +13,7 @@
 <body>
     <div class="container">
     <h1 class="mb-4">Flask Template</h1>
-<pre><code>
+<pre>
 #!/bin/bash
 
 # Ask for project name
@@ -332,7 +332,7 @@ case $deploy_choice in
         exit 1
         ;;
 esac
-</code></pre>
+</pre>
  </div>
 
     <!-- Footer -->
@@ -353,5 +353,20 @@ esac
     <!-- Scripts -->
     <script src="static/scripts/site.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Optional: Add syntax highlighting for shell script in <pre>
+        document.querySelectorAll('pre').forEach(function(pre) {
+            pre.style.background = '#f8f9fa';
+            pre.style.border = '1px solid #dee2e6';
+            pre.style.borderRadius = '0.25rem';
+            pre.style.padding = '1rem';
+            pre.style.overflowX = 'auto';
+            pre.style.fontFamily = 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+            pre.style.fontSize = '1rem';
+        });
+    </script>
 </body>
 </html>

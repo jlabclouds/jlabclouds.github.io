@@ -35,6 +35,11 @@ mkdir -p "$project_dir/auth"
 mkdir -p "$project_dir/utils"
 mkdir -p "$project_dir/logs"
 mkdir -p "$project_dir/docs"
+mkdir -p "$project_dir/ai/{models,pipelines,vectorstores}"
+mkdir -p "$project_dir/llm/{embeddings,prompts,chains}"
+mkdir -p "$project_dir/ml/{training,inference,evaluation}"
+mkdir -p "$project_dir/ai/chat_assistants"
+mkdir -p "$project_dir/ai/integrations"
 
 # Create necessary files
 touch "$project_dir/$project_name/__init__.py"
@@ -42,6 +47,9 @@ touch "$project_dir/database/models/__init__.py"
 touch "$project_dir/auth/__init__.py"
 touch "$project_dir/utils/__init__.py"
 touch "$project_dir/tests/__init__.py"
+touch "$project_dir/ai/__init__.py"
+touch "$project_dir/llm/__init__.py"
+touch "$project_dir/ml/__init__.py"
 
 # Create configuration files
 cat > "$project_dir/config/config.py" << 'EOF'
@@ -175,18 +183,59 @@ pytest-cov
 black
 flake8
 sphinx
-# Database packages
-cx_Oracle
-oracledb
-boto3
+
+# General Database packages
 pymysql
 psycopg2-binary
 sqlalchemy
 alembic
+
+# Oracle Integration
+cx_Oracle
+oracledb
+oracle-asmlib
+exadata-express-client
+
+# Amazon Integration
 boto3
 botocore
 amazon-dax-client
 aws-xray-sdk
+
+# Google Cloud Integration
+google-cloud-sql
+google-cloud-spanner
+google-cloud-datastore
+google-cloud-bigquery
+
+# IBM Integration
+ibm-db
+ibm-db-sa
+cloudant
+ibmcloudant
+
+# AI/ML packages
+torch
+tensorflow
+huggingface-hub[cli,torch,tensorflow]
+faiss-cpu
+langchain
+sentence-transformers
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Vector Stores
+chromadb
+qdrant-client
+pinecone-client
+
+# LLM packages
+anthropic
+cohere
+llama-cpp-python
 EOF
 
 # Create .env file

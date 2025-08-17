@@ -107,6 +107,11 @@ mkdir -p "$project_dir/auth"
 mkdir -p "$project_dir/utils"
 mkdir -p "$project_dir/logs"
 mkdir -p "$project_dir/docs"
+mkdir -p "$project_dir/ai/{models,pipelines,vectorstores}"
+mkdir -p "$project_dir/llm/{embeddings,prompts,chains}"
+mkdir -p "$project_dir/ml/{training,inference,evaluation}"
+mkdir -p "$project_dir/ai/chat_assistants"
+mkdir -p "$project_dir/ai/integrations"
 
 # Create necessary files
 touch "$project_dir/$project_name/__init__.py"
@@ -114,6 +119,9 @@ touch "$project_dir/database/models/__init__.py"
 touch "$project_dir/auth/__init__.py"
 touch "$project_dir/utils/__init__.py"
 touch "$project_dir/tests/__init__.py"
+touch "$project_dir/ai/__init__.py"
+touch "$project_dir/llm/__init__.py"
+touch "$project_dir/ml/__init__.py"
 
 # Create configuration files
 cat > "$project_dir/config/config.py" << 'EOF'
@@ -128,6 +136,41 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'postgresql://user:password@localhost/dbname'
+EOF
+
+# Create a basic AI configuration file
+cat > "$project_dir/ai/config.py" << 'EOF'
+class AIConfig:
+    HUGGINGFACE_API_KEY = "your-api-key"
+    OPENAI_API_KEY = "your-api-key"
+    ANTHROPIC_API_KEY = "your-api-key"
+    
+    # Vector store settings
+    FAISS_INDEX_PATH = "vectorstores/faiss"
+    
+    # Model settings
+    DEFAULT_LLM_MODEL = "gpt-3.5-turbo"
+    DEFAULT_EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+EOF
+
+# Create a basic chat assistant template
+cat > "$project_dir/ai/chat_assistants/base_assistant.py" << 'EOF'
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
+
+class BaseAssistant:
+    def __init__(self, model_name="gpt-3.5-turbo"):
+        self.llm = ChatOpenAI(model_name=model_name)
+        self.memory = ConversationBufferMemory()
+        self.chain = ConversationChain(
+            llm=self.llm,
+            memory=self.memory
+        )
+    
+    def chat(self, message: str) -> str:
+        response = self.chain.predict(input=message)
+        return response
 EOF
 
 # Create uwsgi.ini
@@ -247,18 +290,59 @@ pytest-cov
 black
 flake8
 sphinx
-# Database packages
-cx_Oracle
-oracledb
-boto3
+
+# General Database packages
 pymysql
 psycopg2-binary
 sqlalchemy
 alembic
+
+# Oracle Integration
+cx_Oracle
+oracledb
+oracle-asmlib
+exadata-express-client
+
+# Amazon Integration
 boto3
 botocore
 amazon-dax-client
 aws-xray-sdk
+
+# Google Cloud Integration
+google-cloud-sql
+google-cloud-spanner
+google-cloud-datastore
+google-cloud-bigquery
+
+# IBM Integration
+ibm-db
+ibm-db-sa
+cloudant
+ibmcloudant
+
+# AI/ML packages
+torch
+tensorflow
+huggingface-hub[cli,torch,tensorflow]
+faiss-cpu
+langchain
+sentence-transformers
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Vector Stores
+chromadb
+qdrant-client
+pinecone-client
+
+# LLM packages
+anthropic
+cohere
+llama-cpp-python
 EOF
 
 # Create .env file

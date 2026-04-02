@@ -1,0 +1,64 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.9'
+
+      - name: Cache Julia packages
+        uses: julia-actions/cache@v1
+
+      - name: Install dependencies
+        run: |
+          cd docs
+          julia --project -e 'using Pkg; Pkg.instantiate()'
+
+      - name: Configure git for deployment
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Build and deploy documentation
+        run: |
+          cd docs
+          julia --project make.jl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: true
+
+      - name: Verify deployment
+        if: always()
+        run: |
+          echo "✓ Documentation build completed"
+          if [ -d "docs/build" ]; then
+            echo "✓ Build directory exists"
+            echo "Build contents:"
+            ls -la docs/build/ | head -20
+          else
+            echo "✗ Build directory not found"
+            exit 1
+          fi

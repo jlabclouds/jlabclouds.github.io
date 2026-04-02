@@ -1,0 +1,36 @@
+# Ignore Julia/build artifacts
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl
+
+# Documentation build output
+docs/build/
+docs/.documenter.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Build
+*.o
+*.a
+*.so
+.o/
+
+# Dependencies
+Manifest.toml

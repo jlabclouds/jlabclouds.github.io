@@ -1,0 +1,11 @@
+name = "MyDocumentation"
+uuid = "12345678-1234-1234-1234-1234567890ab"
+version = "0.1.0"
+
+[deps]
+
+[extras]
+Test = "8dfed614-e644-5657-8b53-22cca53ea18e"
+
+[targets]
+test = ["Test"]

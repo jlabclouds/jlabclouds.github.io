@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Basic Examples · MyDocumentation.jl</title><meta name="title" content="Basic Examples · MyDocumentation.jl"/><meta property="og:title" content="Basic Examples · MyDocumentation.jl"/><meta property="twitter:title" content="Basic Examples · MyDocumentation.jl"/><meta name="description" content="Documentation for MyDocumentation.jl."/><meta property="og:description" content="Documentation for MyDocumentation.jl."/><meta property="twitter:description" content="Documentation for MyDocumentation.jl."/><meta property="og:url" content="https://jlabclouds.github.io/d/examples/basic/"/><meta property="twitter:url" content="https://jlabclouds.github.io/d/examples/basic/"/><link rel="canonical" href="https://jlabclouds.github.io/d/examples/basic/"/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">MyDocumentation.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Guide</span><ul><li><a class="tocitem" href="../../guide/getting_started/">Getting Started</a></li><li><a class="tocitem" href="../../guide/tutorial/">Tutorial</a></li><li><a class="tocitem" href="../../guide/advanced/">Advanced Usage</a></li></ul></li><li><a class="tocitem" href="../../api/reference/">API Reference</a></li><li><span class="tocitem">Examples</span><ul><li class="is-active"><a class="tocitem" href>Basic Examples</a><ul class="internal"><li><a class="tocitem" href="#Example-1:-Simple-Greeting"><span>Example 1: Simple Greeting</span></a></li><li><a class="tocitem" href="#Example-2:-Creating-Documents"><span>Example 2: Creating Documents</span></a></li><li><a class="tocitem" href="#Example-3:-Processing-Multiple-Documents"><span>Example 3: Processing Multiple Documents</span></a></li><li><a class="tocitem" href="#Example-4:-Document-Analysis"><span>Example 4: Document Analysis</span></a></li><li><a class="tocitem" href="#Example-5:-Working-with-Collections"><span>Example 5: Working with Collections</span></a></li><li><a class="tocitem" href="#Example-6:-Creating-a-Report"><span>Example 6: Creating a Report</span></a></li><li><a class="tocitem" href="#Next-Steps"><span>Next Steps</span></a></li></ul></li><li><a class="tocitem" href="../advanced/">Advanced Examples</a></li></ul></li><li><a class="tocitem" href="../../contributing/">Contributing</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Examples</a></li><li class="is-active"><a href>Basic Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Basic Examples</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Basic-Examples"><a class="docs-heading-anchor" href="#Basic-Examples">Basic Examples</a><a id="Basic-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-Examples" title="Permalink"></a></h1><p>Practical examples to get you started.</p><h2 id="Example-1:-Simple-Greeting"><a class="docs-heading-anchor" href="#Example-1:-Simple-Greeting">Example 1: Simple Greeting</a><a id="Example-1:-Simple-Greeting-1"></a><a class="docs-heading-anchor-permalink" href="#Example-1:-Simple-Greeting" title="Permalink"></a></h2><p>The most basic example:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+result = hello(&quot;World&quot;)
+println(result)</code></pre><h2 id="Example-2:-Creating-Documents"><a class="docs-heading-anchor" href="#Example-2:-Creating-Documents">Example 2: Creating Documents</a><a id="Example-2:-Creating-Documents-1"></a><a class="docs-heading-anchor-permalink" href="#Example-2:-Creating-Documents" title="Permalink"></a></h2><p>Create and work with documents:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+# Create a document
+doc = Document(
+    &quot;Julia Programming&quot;,
+    &quot;Julia is a high-performance dynamic programming language.&quot;,
+    &quot;Jane Smith&quot;
+)
+
+# Access fields
+println(&quot;Title: $(doc.title)&quot;)
+println(&quot;Author: $(doc.author)&quot;)</code></pre><h2 id="Example-3:-Processing-Multiple-Documents"><a class="docs-heading-anchor" href="#Example-3:-Processing-Multiple-Documents">Example 3: Processing Multiple Documents</a><a id="Example-3:-Processing-Multiple-Documents-1"></a><a class="docs-heading-anchor-permalink" href="#Example-3:-Processing-Multiple-Documents" title="Permalink"></a></h2><pre><code class="language-julia hljs">using MyDocumentation
+
+# Create a list of documents
+documents = [
+    Document(&quot;Chapter 1&quot;, &quot;Introduction...&quot;, &quot;Author A&quot;),
+    Document(&quot;Chapter 2&quot;, &quot;Basics...&quot;, &quot;Author B&quot;),
+    Document(&quot;Chapter 3&quot;, &quot;Advanced Topics...&quot;, &quot;Author C&quot;),
+]
+
+# Print information about each
+for (i, doc) in enumerate(documents)
+    println(&quot;$i. $(doc.title) by $(doc.author)&quot;)
+end</code></pre><h2 id="Example-4:-Document-Analysis"><a class="docs-heading-anchor" href="#Example-4:-Document-Analysis">Example 4: Document Analysis</a><a id="Example-4:-Document-Analysis-1"></a><a class="docs-heading-anchor-permalink" href="#Example-4:-Document-Analysis" title="Permalink"></a></h2><p>Analyze document content:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+doc = Document(
+    &quot;Sample Document&quot;,
+    &quot;This is a sample document with several words in it.&quot;,
+    &quot;Test Author&quot;
+)
+
+# Count words
+word_count = length(split(doc.content))
+println(&quot;Document: $(doc.title)&quot;)
+println(&quot;Words: $word_count&quot;)
+println(&quot;Author: $(doc.author)&quot;)</code></pre><h2 id="Example-5:-Working-with-Collections"><a class="docs-heading-anchor" href="#Example-5:-Working-with-Collections">Example 5: Working with Collections</a><a id="Example-5:-Working-with-Collections-1"></a><a class="docs-heading-anchor-permalink" href="#Example-5:-Working-with-Collections" title="Permalink"></a></h2><p>Process collections of documents:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+# Create document collection
+docs = [
+    Document(&quot;Doc $i&quot;, &quot;Content for document $i&quot;, &quot;Author $i&quot;)
+    for i in 1:5
+]
+
+# Filter and process
+important_docs = filter(doc -&gt; startswith(doc.title, &quot;Doc&quot;), docs)
+
+println(&quot;Processing $(length(important_docs)) documents:&quot;)
+for doc in important_docs
+    println(&quot;  - $(doc.title)&quot;)
+end</code></pre><h2 id="Example-6:-Creating-a-Report"><a class="docs-heading-anchor" href="#Example-6:-Creating-a-Report">Example 6: Creating a Report</a><a id="Example-6:-Creating-a-Report-1"></a><a class="docs-heading-anchor-permalink" href="#Example-6:-Creating-a-Report" title="Permalink"></a></h2><p>Generate a report from documents:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+function generate_report(documents::Vector{Document})::String
+    report = &quot;# Document Report\n\n&quot;
+    report *= &quot;Total Documents: $(length(documents))\n\n&quot;
+    
+    for doc in documents
+        report *= &quot;## $(doc.title)\n&quot;
+        report *= &quot;**Author:** $(doc.author)\n&quot;
+        report *= &quot;**Preview:** $(first(doc.content, 50))...\n\n&quot;
+    end
+    
+    return report
+end
+
+docs = [
+    Document(&quot;Report 1&quot;, &quot;This is the first report with some content&quot;, &quot;Alice&quot;),
+    Document(&quot;Report 2&quot;, &quot;This is the second report with different content&quot;, &quot;Bob&quot;),
+]
+
+println(generate_report(docs))</code></pre><h2 id="Next-Steps"><a class="docs-heading-anchor" href="#Next-Steps">Next Steps</a><a id="Next-Steps-1"></a><a class="docs-heading-anchor-permalink" href="#Next-Steps" title="Permalink"></a></h2><ul><li>See <a href="../advanced/">Advanced Examples</a> for more complex use cases</li><li>Read the <a href="../../guide/tutorial/">Tutorial</a> for a comprehensive introduction</li><li>Check the <a href="../../api/reference/">API Reference</a> for function details</li></ul></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../api/reference/">« API Reference</a><a class="docs-footer-nextpage" href="../advanced/">Advanced Examples »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Wednesday 1 April 2026 22:54">Wednesday 1 April 2026</span>. Using Julia version 1.9.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Advanced Usage · MyDocumentation.jl</title><meta name="title" content="Advanced Usage · MyDocumentation.jl"/><meta property="og:title" content="Advanced Usage · MyDocumentation.jl"/><meta property="twitter:title" content="Advanced Usage · MyDocumentation.jl"/><meta name="description" content="Documentation for MyDocumentation.jl."/><meta property="og:description" content="Documentation for MyDocumentation.jl."/><meta property="twitter:description" content="Documentation for MyDocumentation.jl."/><meta property="og:url" content="https://jlabclouds.github.io/d/guide/advanced/"/><meta property="twitter:url" content="https://jlabclouds.github.io/d/guide/advanced/"/><link rel="canonical" href="https://jlabclouds.github.io/d/guide/advanced/"/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">MyDocumentation.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><span class="tocitem">Guide</span><ul><li><a class="tocitem" href="../getting_started/">Getting Started</a></li><li><a class="tocitem" href="../tutorial/">Tutorial</a></li><li class="is-active"><a class="tocitem" href>Advanced Usage</a><ul class="internal"><li><a class="tocitem" href="#Advanced-Topics"><span>Advanced Topics</span></a></li><li><a class="tocitem" href="#Advanced-Patterns"><span>Advanced Patterns</span></a></li><li><a class="tocitem" href="#Performance-Considerations"><span>Performance Considerations</span></a></li><li><a class="tocitem" href="#Debugging-Techniques"><span>Debugging Techniques</span></a></li><li><a class="tocitem" href="#Common-Pitfalls"><span>Common Pitfalls</span></a></li><li><a class="tocitem" href="#Advanced-Examples"><span>Advanced Examples</span></a></li><li><a class="tocitem" href="#Next-Steps"><span>Next Steps</span></a></li></ul></li></ul></li><li><a class="tocitem" href="../../api/reference/">API Reference</a></li><li><span class="tocitem">Examples</span><ul><li><a class="tocitem" href="../../examples/basic/">Basic Examples</a></li><li><a class="tocitem" href="../../examples/advanced/">Advanced Examples</a></li></ul></li><li><a class="tocitem" href="../../contributing/">Contributing</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Guide</a></li><li class="is-active"><a href>Advanced Usage</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Advanced Usage</a></li></ul></nav><div class="docs-right"><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Advanced-Usage"><a class="docs-heading-anchor" href="#Advanced-Usage">Advanced Usage</a><a id="Advanced-Usage-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-Usage" title="Permalink"></a></h1><p>Advanced topics and techniques for power users.</p><h2 id="Advanced-Topics"><a class="docs-heading-anchor" href="#Advanced-Topics">Advanced Topics</a><a id="Advanced-Topics-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-Topics" title="Permalink"></a></h2><h3 id="Custom-Type-Extensions"><a class="docs-heading-anchor" href="#Custom-Type-Extensions">Custom Type Extensions</a><a id="Custom-Type-Extensions-1"></a><a class="docs-heading-anchor-permalink" href="#Custom-Type-Extensions" title="Permalink"></a></h3><p>Extend existing types with your own functionality:</p><pre><code class="language-julia hljs">import MyDocumentation: Document
+
+# Custom function for documents
+function summary(doc::Document)::String
+    word_count = length(split(doc.content))
+    return &quot;$(doc.title) by $(doc.author) ($(word_count) words)&quot;
+end
+
+doc = Document(&quot;Example&quot;, &quot;This is content&quot;, &quot;Author&quot;)
+println(summary(doc))</code></pre><h3 id="Performance-Optimization"><a class="docs-heading-anchor" href="#Performance-Optimization">Performance Optimization</a><a id="Performance-Optimization-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-Optimization" title="Permalink"></a></h3><p>When working with large collections:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+# Process many documents efficiently
+function batch_process(docs::Vector{Document})
+    # Pre-allocate results
+    results = String[]
+    
+    # Vectorized operations
+    for doc in docs
+        push!(results, &quot;Processed: $(doc.title)&quot;)
+    end
+    
+    return results
+end</code></pre><h3 id="Integration-with-Other-Packages"><a class="docs-heading-anchor" href="#Integration-with-Other-Packages">Integration with Other Packages</a><a id="Integration-with-Other-Packages-1"></a><a class="docs-heading-anchor-permalink" href="#Integration-with-Other-Packages" title="Permalink"></a></h3><p>MyDocumentation.jl works well with other Julia packages:</p><pre><code class="language-julia hljs">using MyDocumentation
+using JSON3
+
+# Export documents to JSON
+function to_json(doc::Document)
+    return JSON3.write(dict(
+        :title =&gt; doc.title,
+        :content =&gt; doc.content,
+        :author =&gt; doc.author,
+    ))
+end</code></pre><h2 id="Advanced-Patterns"><a class="docs-heading-anchor" href="#Advanced-Patterns">Advanced Patterns</a><a id="Advanced-Patterns-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-Patterns" title="Permalink"></a></h2><h3 id="Builder-Pattern"><a class="docs-heading-anchor" href="#Builder-Pattern">Builder Pattern</a><a id="Builder-Pattern-1"></a><a class="docs-heading-anchor-permalink" href="#Builder-Pattern" title="Permalink"></a></h3><p>Create documents using a builder approach:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+struct DocumentBuilder
+    title::String
+    content::Ref{String}
+    author::Ref{String}
+    
+    DocumentBuilder(title) = new(title, Ref(&quot;&quot;), Ref(&quot;&quot;))
+end
+
+function with_content(builder::DocumentBuilder, content::String)
+    builder.content[] = content
+    return builder
+end
+
+function with_author(builder::DocumentBuilder, author::String)
+    builder.author[] = author
+    return builder
+end
+
+function build(builder::DocumentBuilder)::Document
+    return Document(builder.title, builder.content[], builder.author[])
+end
+
+# Usage
+doc = build(
+    with_author(
+        with_content(
+            DocumentBuilder(&quot;My Title&quot;),
+            &quot;Document content here&quot;
+        ),
+        &quot;John Doe&quot;
+    )
+)</code></pre><h3 id="Functional-Composition"><a class="docs-heading-anchor" href="#Functional-Composition">Functional Composition</a><a id="Functional-Composition-1"></a><a class="docs-heading-anchor-permalink" href="#Functional-Composition" title="Permalink"></a></h3><p>Compose operations functionally:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+# Compose transformations
+uppercase_title(doc) = Document(uppercase(doc.title), doc.content, doc.author)
+add_prefix(prefix) = doc -&gt; Document(&quot;$prefix: $(doc.title)&quot;, doc.content, doc.author)
+
+# Apply composed transformations
+doc = Document(&quot;original&quot;, &quot;content&quot;, &quot;author&quot;)
+result = add_prefix(&quot;IMPORTANT&quot;)(uppercase_title(doc))</code></pre><h2 id="Performance-Considerations"><a class="docs-heading-anchor" href="#Performance-Considerations">Performance Considerations</a><a id="Performance-Considerations-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-Considerations" title="Permalink"></a></h2><h3 id="Memory-Usage"><a class="docs-heading-anchor" href="#Memory-Usage">Memory Usage</a><a id="Memory-Usage-1"></a><a class="docs-heading-anchor-permalink" href="#Memory-Usage" title="Permalink"></a></h3><p>For large-scale document processing:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+# Use String interning for repeated content
+const title_cache = Dict{String, String}()
+
+function cached_title(title::String)
+    get!(title_cache, title, title)
+end
+
+# For memory-intensive operations, consider strided arrays and views
+function process_large_collection(docs::Vector{Document})
+    # Process in chunks to manage memory
+    chunk_size = 1000
+    for i in 1:chunk_size:length(docs)
+        chunk = @view docs[i:min(i+chunk_size-1, end)]
+        # Process chunk
+    end
+end</code></pre><h3 id="Multithreading"><a class="docs-heading-anchor" href="#Multithreading">Multithreading</a><a id="Multithreading-1"></a><a class="docs-heading-anchor-permalink" href="#Multithreading" title="Permalink"></a></h3><p>Enable parallel processing:</p><pre><code class="language-julia hljs">using MyDocumentation
+using Base.Threads
+
+function parallel_process(docs::Vector{Document})
+    results = Vector{String}(undef, length(docs))
+    
+    @threads for i in eachindex(docs)
+        doc = docs[i]
+        results[i] = &quot;Processed: $(doc.title)&quot;
+    end
+    
+    return results
+end</code></pre><h2 id="Debugging-Techniques"><a class="docs-heading-anchor" href="#Debugging-Techniques">Debugging Techniques</a><a id="Debugging-Techniques-1"></a><a class="docs-heading-anchor-permalink" href="#Debugging-Techniques" title="Permalink"></a></h2><h3 id="Enable-Verbose-Logging"><a class="docs-heading-anchor" href="#Enable-Verbose-Logging">Enable Verbose Logging</a><a id="Enable-Verbose-Logging-1"></a><a class="docs-heading-anchor-permalink" href="#Enable-Verbose-Logging" title="Permalink"></a></h3><pre><code class="language-julia hljs">using Logging
+
+# Set debug logging level
+global_logger(ConsoleLogger(stderr, Logging.Debug))
+
+# Your code here
+@debug &quot;Processing document&quot; doc=doc</code></pre><h3 id="Profiling-Code"><a class="docs-heading-anchor" href="#Profiling-Code">Profiling Code</a><a id="Profiling-Code-1"></a><a class="docs-heading-anchor-permalink" href="#Profiling-Code" title="Permalink"></a></h3><p>Identify bottlenecks:</p><pre><code class="language-julia hljs">using Profile, ProfileSVG
+
+function expensive_operation()
+    # Your code
+end
+
+@profile expensive_operation()
+ProfileSVG.save(&quot;/tmp/profile.svg&quot;)</code></pre><h2 id="Common-Pitfalls"><a class="docs-heading-anchor" href="#Common-Pitfalls">Common Pitfalls</a><a id="Common-Pitfalls-1"></a><a class="docs-heading-anchor-permalink" href="#Common-Pitfalls" title="Permalink"></a></h2><h3 id="Mutable-Struct-Issues"><a class="docs-heading-anchor" href="#Mutable-Struct-Issues">❌ Mutable Struct Issues</a><a id="Mutable-Struct-Issues-1"></a><a class="docs-heading-anchor-permalink" href="#Mutable-Struct-Issues" title="Permalink"></a></h3><p>Avoid unexpected mutations:</p><pre><code class="language-julia hljs"># ❌ Bad: mutable but should be immutable
+mutable struct BadDocument
+    title::String
+    content::String
+end
+
+# ✅ Good: immutable for safety
+struct GoodDocument
+    title::String
+    content::String
+end</code></pre><h3 id="Type-Instability"><a class="docs-heading-anchor" href="#Type-Instability">❌ Type Instability</a><a id="Type-Instability-1"></a><a class="docs-heading-anchor-permalink" href="#Type-Instability" title="Permalink"></a></h3><p>Keep types consistent:</p><pre><code class="language-julia hljs"># ❌ Bad: function returns different types
+function process(x)
+    if x &lt; 0
+        return nothing  # Different type!
+    else
+        return x * 2
+    end
+end
+
+# ✅ Good: consistent return type
+function process(x)::Int
+    return max(0, x * 2)
+end</code></pre><h2 id="Advanced-Examples"><a class="docs-heading-anchor" href="#Advanced-Examples">Advanced Examples</a><a id="Advanced-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-Examples" title="Permalink"></a></h2><h3 id="Custom-Iteration"><a class="docs-heading-anchor" href="#Custom-Iteration">Custom Iteration</a><a id="Custom-Iteration-1"></a><a class="docs-heading-anchor-permalink" href="#Custom-Iteration" title="Permalink"></a></h3><p>Implement iteration protocol:</p><pre><code class="language-julia hljs">using MyDocumentation
+
+struct DocumentCollection
+    docs::Vector{Document}
+end
+
+Base.iterate(dc::DocumentCollection) = iterate(dc.docs)
+Base.iterate(dc::DocumentCollection, state) = iterate(dc.docs, state)
+Base.length(dc::DocumentCollection) = length(dc.docs)
+
+# Usage
+collection = DocumentCollection([
+    Document(&quot;Doc1&quot;, &quot;content1&quot;, &quot;author1&quot;),
+    Document(&quot;Doc2&quot;, &quot;content2&quot;, &quot;author2&quot;),
+])
+
+for doc in collection
+    println(doc.title)
+end</code></pre><h2 id="Next-Steps"><a class="docs-heading-anchor" href="#Next-Steps">Next Steps</a><a id="Next-Steps-1"></a><a class="docs-heading-anchor-permalink" href="#Next-Steps" title="Permalink"></a></h2><ul><li>Check the <a href="../../api/reference/">API Reference</a> for all available functions</li><li>Explore <a href="../../examples/advanced/">Examples</a> for more code samples</li><li>Contribute improvements - see <a href="../../contributing/">Contributing</a></li></ul></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../tutorial/">« Tutorial</a><a class="docs-footer-nextpage" href="../../api/reference/">API Reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Wednesday 1 April 2026 22:54">Wednesday 1 April 2026</span>. Using Julia version 1.9.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

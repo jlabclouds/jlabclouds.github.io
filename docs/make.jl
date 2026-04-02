@@ -63,7 +63,7 @@ makedocs(
     format = Documenter.HTML(
         prettyurls = is_ci,  # Enable pretty URLs on CI/GitHub Pages
         # Change your documentation URL
-        canonical = "https://jlabclouds.github.io/d/",  
+        canonical = "https://jlabclouds.github.io",  
         # Note: omitting assets uses Documenter's default theme (CSS/JS/styling)
     ),
 )
@@ -74,9 +74,9 @@ makedocs(
 github_token = get(ENV, "GITHUB_TOKEN", nothing)
 repo_url = if is_ci && github_token !== nothing
     # Change to your repository URL
-    "https://$(github_token)@github.com/jlabclouds/d.git"
+    "https://$(github_token)@github.com/jlabclouds/jlabclouds.github.git"
 else
-    "github.com/jlabclouds/d.git"
+    "github.com/jlabclouds/jlabclouds.github.io.git"
 end
 
 deploydocs(
